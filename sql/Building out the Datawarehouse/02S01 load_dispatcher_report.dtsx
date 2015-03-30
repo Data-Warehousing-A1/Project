@@ -1,0 +1,1781 @@
+<?xml version="1.0"?>
+<DTS:Executable
+  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:CreatorName="BIGKAHUNA\David"
+  DTS:CreatorComputerName="BIGKAHUNA"
+  DTS:CreationDate="3/26/2015 4:38:25 PM"
+  DTS:VersionGUID="{DAA57BDF-B440-4877-BE19-AE432D7E020B}"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:MaxErrorCount="0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="load_dispatcher_report"
+  DTS:DTSID="{9168CE10-7D88-44A4-83A4-0FBF6D87591B}"
+  DTS:Description="SSIS Package Description"
+  DTS:CreationName="SSIS.Package.3">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:ObjectName="DestinationConnectionOLEDB"
+      DTS:DTSID="{92D3681D-9E7D-4D1F-B959-38BC73430080}"
+      DTS:CreationName="OLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=LPTRRS40;Initial Catalog=DW_Medical;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:ObjectName="SourceConnectionFlatFile"
+      DTS:DTSID="{A14B032A-6118-494B-8397-38F0DEDE88A5}"
+      DTS:CreationName="FLATFILE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\David.Kolln\OneDrive\Data Warehouse\Project\files\EmsApr1to30-2012Calls.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{4E1FD5D4-93CA-4E21-9BED-AE2ECE7A8389}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Time"
+              DTS:DTSID="{3812EEA8-036D-4CE1-9BC6-DBFD3EE4614F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="County"
+              DTS:DTSID="{9BFDA865-3F04-493D-979C-8FF34E545C73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Unit"
+              DTS:DTSID="{3C83223A-8A17-43F6-9635-89D674D1FA75}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age"
+              DTS:DTSID="{631739C0-3BC9-4E77-886B-80BEED9950D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ped Color"
+              DTS:DTSID="{1888C121-0C51-4FB2-A486-44B1206E1F74}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sex"
+              DTS:DTSID="{A1C19040-EAE0-4786-A560-B00DFEF33FB8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Category"
+              DTS:DTSID="{DF0995EA-8529-43BD-A7D1-D4989BD2DDA6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Description"
+              DTS:DTSID="{386980D7-4947-44A5-9FBB-899C4B0579CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CC"
+              DTS:DTSID="{6C644DC7-98E8-4D06-9967-C7D4220CD871}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BP 1"
+              DTS:DTSID="{0320FABB-967B-449C-8F53-B812045E3364}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BP 2"
+              DTS:DTSID="{5E5AF810-8807-4ECC-A5F3-542921D0EC57}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pulse 1"
+              DTS:DTSID="{11ABF24A-7524-441A-AB23-B11327CF52E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pulse 2"
+              DTS:DTSID="{32E0E817-524F-4242-9689-9270C4B7348B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Resp 1"
+              DTS:DTSID="{365E3454-7AD1-47B8-B20E-98221754E112}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Resp 2"
+              DTS:DTSID="{4F78F150-6966-4955-84E3-E4C950422C43}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="O2 Sat 1"
+              DTS:DTSID="{5024D272-BE0A-467A-A1C5-17B982A33346}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="O2 Sat 2"
+              DTS:DTSID="{43ACD54D-DDB1-41EF-AE94-0D9327378BD5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BGL 1"
+              DTS:DTSID="{F6BE3EF9-B384-4DA6-A414-5DE9C1D8C19F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BGL 2"
+              DTS:DTSID="{B347C4AE-415D-413F-90E3-52C018991F80}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LOC"
+              DTS:DTSID="{16863BF1-C815-4624-8878-DD88F253824E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GCS"
+              DTS:DTSID="{2B64BE37-D33F-48F2-8044-24DD85B89FFD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="T A"
+              DTS:DTSID="{6206D18E-4ADA-4285-8212-0F24838A1C10}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="S A"
+              DTS:DTSID="{B7F48988-EDEE-4F5E-8CDC-2EB5F9CB53C0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Stemi"
+              DTS:DTSID="{713ED7AC-686C-4135-BE56-947D54AFE28E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dept"
+              DTS:DTSID="{DC675AC3-61A9-4009-8E5D-1CA100200F50}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Level"
+              DTS:DTSID="{48CBB462-4FC4-49D6-95A3-D60C45B3089A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Resus"
+              DTS:DTSID="{8BD5B303-B7C3-4C8C-B9EC-4188A099EE8E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ETA"
+              DTS:DTSID="{6930C17B-CD5E-49AF-8306-80ACFCFD1487}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MPS"
+              DTS:DTSID="{1EF78709-C162-460A-9661-077AB6051F80}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:DTSID="{8A61E8D5-15FB-4BAF-87F3-C7610A9F4767}"
+      DTS:CreationName="SSIS.Pipeline.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - dispatcher_report"
+              name="Destination - dispatcher_report"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              description="OLE DB Destination"
+              usesDispositions="true"
+              version="4"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset.">[load].[dispatcher_report]</property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">3</property>
+                <property
+                  name="FastLoadKeepIdentity"
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadKeepNulls"
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadOptions"
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  name="FastLoadMaxInsertCommitSize"
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - dispatcher_report.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input]"
+                  name="Destination Input"
+                  hasSideEffects="true"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[Date]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Date]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Date]"
+                      cachedName="Date"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[Time]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Time]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Time]"
+                      cachedName="Time"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[County]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[County]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[County]"
+                      cachedName="County"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[Unit]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Unit]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Unit]"
+                      cachedName="Unit"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[Age]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Age]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Age]"
+                      cachedName="Age"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[Ped Color]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Ped Color]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Ped Color]"
+                      cachedName="Ped Color"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[Sex]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Sex]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Sex]"
+                      cachedName="Sex"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[Category]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Category]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Category]"
+                      cachedName="Category"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[Description]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Description]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Description]"
+                      cachedName="Description"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[CC]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[CC]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[CC]"
+                      cachedName="CC"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[BP 1]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[BP 1]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[BP 1]"
+                      cachedName="BP 1"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[BP 2]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[BP 2]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[BP 2]"
+                      cachedName="BP 2"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[Pulse 1]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Pulse 1]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Pulse 1]"
+                      cachedName="Pulse 1"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[Pulse 2]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Pulse 2]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Pulse 2]"
+                      cachedName="Pulse 2"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[Resp 1]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Resp 1]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Resp 1]"
+                      cachedName="Resp 1"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[Resp 2]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Resp 2]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Resp 2]"
+                      cachedName="Resp 2"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[O2 Sat 1]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[O2 Sat 1]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[O2 Sat 1]"
+                      cachedName="O2 Sat 1"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[O2 Sat 2]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[O2 Sat 2]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[O2 Sat 2]"
+                      cachedName="O2 Sat 2"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[BGL 1]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[BGL 1]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[BGL 1]"
+                      cachedName="BGL 1"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[BGL 2]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[BGL 2]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[BGL 2]"
+                      cachedName="BGL 2"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[LOC]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[LOC]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[LOC]"
+                      cachedName="LOC"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[GCS]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[GCS]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[GCS]"
+                      cachedName="GCS"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[T A]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[T A]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[T A]"
+                      cachedName="T A"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[S A]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[S A]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[S A]"
+                      cachedName="S A"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[Stemi]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Stemi]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Stemi]"
+                      cachedName="Stemi"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[Dept]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Dept]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Dept]"
+                      cachedName="Dept"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[Level]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Level]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Level]"
+                      cachedName="Level"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[Resus]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Resus]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Resus]"
+                      cachedName="Resus"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[ETA]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[ETA]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[ETA]"
+                      cachedName="ETA"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].Columns[MPS]"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[MPS]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[MPS]"
+                      cachedName="MPS"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedCodepage="1252" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Date]"
+                      name="Date"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Time]"
+                      name="Time"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[County]"
+                      name="County"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Unit]"
+                      name="Unit"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Age]"
+                      name="Age"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Ped Color]"
+                      name="Ped Color"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Sex]"
+                      name="Sex"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Category]"
+                      name="Category"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Description]"
+                      name="Description"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[CC]"
+                      name="CC"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[BP 1]"
+                      name="BP 1"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[BP 2]"
+                      name="BP 2"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Pulse 1]"
+                      name="Pulse 1"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Pulse 2]"
+                      name="Pulse 2"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Resp 1]"
+                      name="Resp 1"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Resp 2]"
+                      name="Resp 2"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[O2 Sat 1]"
+                      name="O2 Sat 1"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[O2 Sat 2]"
+                      name="O2 Sat 2"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[BGL 1]"
+                      name="BGL 1"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[BGL 2]"
+                      name="BGL 2"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[LOC]"
+                      name="LOC"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[GCS]"
+                      name="GCS"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[T A]"
+                      name="T A"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[S A]"
+                      name="S A"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Stemi]"
+                      name="Stemi"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Dept]"
+                      name="Dept"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Level]"
+                      name="Level"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[Resus]"
+                      name="Resus"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[ETA]"
+                      name="ETA"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[MPS]"
+                      name="MPS"
+                      dataType="str"
+                      length="8000"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input].ExternalColumns[id]"
+                      name="id"
+                      dataType="i8" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - dispatcher_report.Outputs[OLE DB Destination Error Output]"
+                  name="OLE DB Destination Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task 1\Destination - dispatcher_report.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - dispatcher_report.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task 1\Destination - dispatcher_report.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv"
+              name="Source - EmsFeb1to29-2012Calls_csv"
+              componentClassID="{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}"
+              description="Flat File Source"
+              localeId="1033"
+              usesDispositions="true"
+              version="1"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1">
+              <properties>
+                <property
+                  name="RetainNulls"
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null.">false</property>
+                <property
+                  name="FileNameColumnName"
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Connections[FlatFileConnection]"
+                  name="FlatFileConnection"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Date]"
+                      name="Date"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Date]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Date]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Time]"
+                      name="Time"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Time]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Time]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[County]"
+                      name="County"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[County]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[County]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Unit]"
+                      name="Unit"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Unit]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Unit]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Age]"
+                      name="Age"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Age]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Age]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Ped Color]"
+                      name="Ped Color"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Ped Color]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Ped Color]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Sex]"
+                      name="Sex"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Sex]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Sex]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Category]"
+                      name="Category"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Category]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Category]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Description]"
+                      name="Description"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Description]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Description]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[CC]"
+                      name="CC"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[CC]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[CC]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[BP 1]"
+                      name="BP 1"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[BP 1]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[BP 1]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[BP 2]"
+                      name="BP 2"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[BP 2]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[BP 2]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Pulse 1]"
+                      name="Pulse 1"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Pulse 1]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Pulse 1]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Pulse 2]"
+                      name="Pulse 2"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Pulse 2]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Pulse 2]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Resp 1]"
+                      name="Resp 1"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Resp 1]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Resp 1]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Resp 2]"
+                      name="Resp 2"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Resp 2]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Resp 2]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[O2 Sat 1]"
+                      name="O2 Sat 1"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[O2 Sat 1]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[O2 Sat 1]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[O2 Sat 2]"
+                      name="O2 Sat 2"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[O2 Sat 2]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[O2 Sat 2]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[BGL 1]"
+                      name="BGL 1"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[BGL 1]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[BGL 1]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[BGL 2]"
+                      name="BGL 2"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[BGL 2]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[BGL 2]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[LOC]"
+                      name="LOC"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[LOC]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[LOC]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[GCS]"
+                      name="GCS"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[GCS]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[GCS]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[T A]"
+                      name="T A"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[T A]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[T A]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[S A]"
+                      name="S A"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[S A]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[S A]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Stemi]"
+                      name="Stemi"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Stemi]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Stemi]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Dept]"
+                      name="Dept"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Dept]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Dept]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Level]"
+                      name="Level"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Level]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Level]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Resus]"
+                      name="Resus"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[Resus]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Resus]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[ETA]"
+                      name="ETA"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[ETA]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[ETA]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[MPS]"
+                      name="MPS"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].Columns[MPS]"
+                      length="500"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[MPS]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      name="Date"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Time]"
+                      name="Time"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[County]"
+                      name="County"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Unit]"
+                      name="Unit"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      name="Age"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Ped Color]"
+                      name="Ped Color"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Sex]"
+                      name="Sex"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Category]"
+                      name="Category"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                      name="Description"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[CC]"
+                      name="CC"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[BP 1]"
+                      name="BP 1"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[BP 2]"
+                      name="BP 2"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Pulse 1]"
+                      name="Pulse 1"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Pulse 2]"
+                      name="Pulse 2"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Resp 1]"
+                      name="Resp 1"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Resp 2]"
+                      name="Resp 2"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[O2 Sat 1]"
+                      name="O2 Sat 1"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[O2 Sat 2]"
+                      name="O2 Sat 2"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[BGL 1]"
+                      name="BGL 1"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[BGL 2]"
+                      name="BGL 2"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[LOC]"
+                      name="LOC"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[GCS]"
+                      name="GCS"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[T A]"
+                      name="T A"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[S A]"
+                      name="S A"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Stemi]"
+                      name="Stemi"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Dept]"
+                      name="Dept"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Level]"
+                      name="Level"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[Resus]"
+                      name="Resus"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[ETA]"
+                      name="ETA"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output].ExternalColumns[MPS]"
+                      name="MPS"
+                      dataType="str"
+                      length="500"
+                      codePage="1252" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Error Output]"
+                  name="Flat File Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      dataType="text"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - EmsFeb1to29-2012Calls_csv.Outputs[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Destination - dispatcher_report.Inputs[Destination Input]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>
