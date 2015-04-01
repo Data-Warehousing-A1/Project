@@ -39,7 +39,8 @@
             this.AccountComboBox.Items.AddRange(new object[] {
             "Dispatcher",
             "Physician",
-            "Report"});
+            "Report",
+            "Nurse"});
             this.AccountComboBox.Location = new System.Drawing.Point(198, 222);
             this.AccountComboBox.Name = "AccountComboBox";
             this.AccountComboBox.Size = new System.Drawing.Size(121, 21);

@@ -46,6 +46,9 @@ namespace DW_Project
                 case 2:
                     SwitchToNewForm(new ReportForm());
                     break;
+                case 3:
+                    SwitchToNewForm(new NurseForm());
+                    break;
             }
         }
 

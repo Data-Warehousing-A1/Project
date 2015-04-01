@@ -28,11 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // PhysicianForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1130, 587);
+            this.Name = "PhysicianForm";
             this.Text = "PhysicianForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
     }
 }
