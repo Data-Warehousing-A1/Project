@@ -1,0 +1,16 @@
+//used for poulating dispatch reports in nurse form
+select dispatch_date, Unit, County, age from dispatcher_report where dispatch_date between "date1" and "date2" 
+	and NurseNum <> NULL;
+
+select name from cause_category where cause_category_wk = 
+	(select cause_category_wk from dbo.cause_dbo.dispatche where dispatch_date =
+	"dispatch_date", Unit="Unit", County="County", age="age") orderby sort_order;
+
+//used in populating phys and nurse numbers in nurse form
+select PhysNum, name from Pysician;
+
+select NurseNum, name from Nurse;
+
+//used in adding nurseNum and PhyNum to selected dispatcher_report
+update dbo.dispatcher_report set PhysNum = "physnum", NurseNum = "nursenum" where dispatch_date=
+	"dispatch_date", Unit="Unit", County="County", age="age";

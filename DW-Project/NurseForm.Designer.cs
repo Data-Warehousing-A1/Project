@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NurseForm));
             this.backBut = new System.Windows.Forms.Button();
             this.selectBut = new System.Windows.Forms.Button();
             this.enterBut = new System.Windows.Forms.Button();
@@ -38,134 +39,117 @@
             this.endRangeLabel = new System.Windows.Forms.Label();
             this.allCheck = new System.Windows.Forms.CheckBox();
             this.reportList = new System.Windows.Forms.ListBox();
+            this.physLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.phyCombo = new System.Windows.Forms.ComboBox();
+            this.nurseCombo = new System.Windows.Forms.ComboBox();
             this.disrepinfoTable.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // backBut
             // 
-            this.backBut.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.backBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backBut.Location = new System.Drawing.Point(599, 477);
+            resources.ApplyResources(this.backBut, "backBut");
             this.backBut.Name = "backBut";
-            this.backBut.Size = new System.Drawing.Size(80, 30);
-            this.backBut.TabIndex = 9;
-            this.backBut.Text = "Back";
             this.backBut.UseVisualStyleBackColor = true;
             this.backBut.Click += new System.EventHandler(this.backBut_Click);
             // 
             // selectBut
             // 
-            this.selectBut.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.selectBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectBut.Location = new System.Drawing.Point(834, 386);
+            resources.ApplyResources(this.selectBut, "selectBut");
             this.selectBut.Name = "selectBut";
-            this.selectBut.Size = new System.Drawing.Size(80, 30);
-            this.selectBut.TabIndex = 8;
-            this.selectBut.Text = "Select";
             this.selectBut.UseVisualStyleBackColor = true;
             this.selectBut.Click += new System.EventHandler(this.selectBut_Click);
             // 
             // enterBut
             // 
-            this.enterBut.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.enterBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enterBut.Location = new System.Drawing.Point(332, 386);
+            resources.ApplyResources(this.enterBut, "enterBut");
             this.enterBut.Name = "enterBut";
-            this.enterBut.Size = new System.Drawing.Size(80, 30);
-            this.enterBut.TabIndex = 7;
-            this.enterBut.Text = "Enter";
             this.enterBut.UseVisualStyleBackColor = true;
             this.enterBut.Click += new System.EventHandler(this.enterBut_Click);
             // 
             // disrepinfoTable
             // 
-            this.disrepinfoTable.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.disrepinfoTable.ColumnCount = 2;
-            this.disrepinfoTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.84404F));
-            this.disrepinfoTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.15596F));
+            this.disrepinfoTable.AllowDrop = true;
+            resources.ApplyResources(this.disrepinfoTable, "disrepinfoTable");
             this.disrepinfoTable.Controls.Add(this.startDate, 0, 1);
             this.disrepinfoTable.Controls.Add(this.startrangeLabel, 0, 0);
             this.disrepinfoTable.Controls.Add(this.endDate, 0, 1);
             this.disrepinfoTable.Controls.Add(this.endRangeLabel, 1, 0);
-            this.disrepinfoTable.Location = new System.Drawing.Point(64, 56);
             this.disrepinfoTable.Name = "disrepinfoTable";
-            this.disrepinfoTable.RowCount = 2;
-            this.disrepinfoTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.45454F));
-            this.disrepinfoTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.54546F));
-            this.disrepinfoTable.Size = new System.Drawing.Size(587, 66);
-            this.disrepinfoTable.TabIndex = 5;
             // 
             // startDate
             // 
-            this.startDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.startDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startDate.Location = new System.Drawing.Point(14, 34);
+            resources.ApplyResources(this.startDate, "startDate");
             this.startDate.Name = "startDate";
-            this.startDate.Size = new System.Drawing.Size(281, 26);
-            this.startDate.TabIndex = 3;
             // 
             // startrangeLabel
             // 
-            this.startrangeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.startrangeLabel.AutoSize = true;
-            this.startrangeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startrangeLabel.Location = new System.Drawing.Point(97, 3);
+            resources.ApplyResources(this.startrangeLabel, "startrangeLabel");
             this.startrangeLabel.Name = "startrangeLabel";
-            this.startrangeLabel.Size = new System.Drawing.Size(116, 22);
-            this.startrangeLabel.TabIndex = 0;
-            this.startrangeLabel.Text = "Start Range: ";
             // 
             // endDate
             // 
-            this.endDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endDate.Location = new System.Drawing.Point(317, 34);
+            resources.ApplyResources(this.endDate, "endDate");
             this.endDate.Name = "endDate";
-            this.endDate.Size = new System.Drawing.Size(262, 26);
-            this.endDate.TabIndex = 1;
             // 
             // endRangeLabel
             // 
-            this.endRangeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.endRangeLabel.AutoSize = true;
-            this.endRangeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endRangeLabel.Location = new System.Drawing.Point(393, 3);
+            resources.ApplyResources(this.endRangeLabel, "endRangeLabel");
             this.endRangeLabel.Name = "endRangeLabel";
-            this.endRangeLabel.Size = new System.Drawing.Size(110, 22);
-            this.endRangeLabel.TabIndex = 2;
-            this.endRangeLabel.Text = "End Range: ";
             // 
             // allCheck
             // 
-            this.allCheck.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.allCheck.AutoSize = true;
-            this.allCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.allCheck.Location = new System.Drawing.Point(64, 128);
+            resources.ApplyResources(this.allCheck, "allCheck");
             this.allCheck.Name = "allCheck";
-            this.allCheck.Size = new System.Drawing.Size(89, 24);
-            this.allCheck.TabIndex = 10;
-            this.allCheck.Text = "Show All";
             this.allCheck.UseVisualStyleBackColor = true;
             // 
             // reportList
             // 
-            this.reportList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.reportList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.reportList, "reportList");
             this.reportList.FormattingEnabled = true;
-            this.reportList.ItemHeight = 15;
             this.reportList.Items.AddRange(new object[] {
-            "Date, Unit, County, top symtom, top cause",
-            "test, test, test, test, test"});
-            this.reportList.Location = new System.Drawing.Point(766, 56);
+            resources.GetString("reportList.Items")});
             this.reportList.Name = "reportList";
-            this.reportList.Size = new System.Drawing.Size(250, 289);
-            this.reportList.TabIndex = 11;
+            // 
+            // physLabel
+            // 
+            resources.ApplyResources(this.physLabel, "physLabel");
+            this.physLabel.Name = "physLabel";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AllowDrop = true;
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.physLabel, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.phyCombo, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.nurseCombo, 0, 1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // phyCombo
+            // 
+            resources.ApplyResources(this.phyCombo, "phyCombo");
+            this.phyCombo.FormattingEnabled = true;
+            this.phyCombo.Name = "phyCombo";
+            // 
+            // nurseCombo
+            // 
+            resources.ApplyResources(this.nurseCombo, "nurseCombo");
+            this.nurseCombo.FormattingEnabled = true;
+            this.nurseCombo.Name = "nurseCombo";
             // 
             // NurseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 568);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.reportList);
             this.Controls.Add(this.allCheck);
             this.Controls.Add(this.backBut);
@@ -173,9 +157,10 @@
             this.Controls.Add(this.enterBut);
             this.Controls.Add(this.disrepinfoTable);
             this.Name = "NurseForm";
-            this.Text = "NurseForm";
             this.disrepinfoTable.ResumeLayout(false);
             this.disrepinfoTable.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,5 +178,10 @@
         private System.Windows.Forms.Label endRangeLabel;
         private System.Windows.Forms.CheckBox allCheck;
         private System.Windows.Forms.ListBox reportList;
+        private System.Windows.Forms.Label physLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ComboBox phyCombo;
+        private System.Windows.Forms.ComboBox nurseCombo;
     }
 }
