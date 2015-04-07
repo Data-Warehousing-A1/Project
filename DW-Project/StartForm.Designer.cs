@@ -91,7 +91,6 @@
             this.UsernameLabel.Size = new System.Drawing.Size(55, 13);
             this.UsernameLabel.TabIndex = 5;
             this.UsernameLabel.Text = "Username";
-            this.UsernameLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // PasswordLabel
             // 
@@ -120,7 +119,6 @@
             this.MinimumSize = new System.Drawing.Size(233, 285);
             this.Name = "StartScreenForm";
             this.Text = "StartScreen";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
