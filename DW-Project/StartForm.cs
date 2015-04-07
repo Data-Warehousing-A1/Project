@@ -24,7 +24,6 @@ namespace DW_Project
 
         private void SwitchToNewForm(Form window)
         {
-            MessageBox.Show("Enter account name and password.");
             this.Visible = false;
             window.ShowDialog();
             this.Close();
@@ -52,6 +51,11 @@ namespace DW_Project
         private void HelloWorldButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Hello World!");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
