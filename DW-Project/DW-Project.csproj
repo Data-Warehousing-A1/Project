@@ -78,6 +78,12 @@
     <Compile Include="ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewForm.Designer.cs">
+      <DependentUpon>viewForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="NurseForm.resx">
       <DependentUpon>NurseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +105,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="viewForm.resx">
+      <DependentUpon>viewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

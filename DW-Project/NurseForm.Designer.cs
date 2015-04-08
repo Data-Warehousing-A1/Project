@@ -44,6 +44,11 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.phyCombo = new System.Windows.Forms.ComboBox();
             this.nurseCombo = new System.Windows.Forms.ComboBox();
+            this.symtomText = new System.Windows.Forms.TextBox();
+            this.symtomLabel = new System.Windows.Forms.Label();
+            this.causeLabel = new System.Windows.Forms.Label();
+            this.causeText = new System.Windows.Forms.TextBox();
+            this.viewButt = new System.Windows.Forms.Button();
             this.disrepinfoTable.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -112,6 +117,7 @@
             this.reportList.Items.AddRange(new object[] {
             resources.GetString("reportList.Items")});
             this.reportList.Name = "reportList";
+            this.reportList.SelectedIndexChanged += new System.EventHandler(this.reportList_SelectedIndexChanged);
             // 
             // physLabel
             // 
@@ -145,10 +151,42 @@
             this.nurseCombo.FormattingEnabled = true;
             this.nurseCombo.Name = "nurseCombo";
             // 
+            // symtomText
+            // 
+            resources.ApplyResources(this.symtomText, "symtomText");
+            this.symtomText.Name = "symtomText";
+            // 
+            // symtomLabel
+            // 
+            resources.ApplyResources(this.symtomLabel, "symtomLabel");
+            this.symtomLabel.Name = "symtomLabel";
+            // 
+            // causeLabel
+            // 
+            resources.ApplyResources(this.causeLabel, "causeLabel");
+            this.causeLabel.Name = "causeLabel";
+            // 
+            // causeText
+            // 
+            resources.ApplyResources(this.causeText, "causeText");
+            this.causeText.Name = "causeText";
+            // 
+            // viewButt
+            // 
+            resources.ApplyResources(this.viewButt, "viewButt");
+            this.viewButt.Name = "viewButt";
+            this.viewButt.UseVisualStyleBackColor = true;
+            this.viewButt.Click += new System.EventHandler(this.viewButt_Click);
+            // 
             // NurseForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.viewButt);
+            this.Controls.Add(this.causeLabel);
+            this.Controls.Add(this.causeText);
+            this.Controls.Add(this.symtomLabel);
+            this.Controls.Add(this.symtomText);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.reportList);
             this.Controls.Add(this.allCheck);
@@ -183,5 +221,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ComboBox phyCombo;
         private System.Windows.Forms.ComboBox nurseCombo;
+        private System.Windows.Forms.TextBox symtomText;
+        private System.Windows.Forms.Label symtomLabel;
+        private System.Windows.Forms.Label causeLabel;
+        private System.Windows.Forms.TextBox causeText;
+        private System.Windows.Forms.Button viewButt;
     }
 }

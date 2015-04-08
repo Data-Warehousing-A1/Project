@@ -126,7 +126,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="backBut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>583, 479</value>
+    <value>414, 443</value>
   </data>
   <data name="backBut.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 30</value>
@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;backBut.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>8</value>
   </data>
   <data name="selectBut.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -157,7 +157,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="selectBut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 403</value>
+    <value>163, 375</value>
   </data>
   <data name="selectBut.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 30</value>
@@ -178,7 +178,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;selectBut.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>9</value>
   </data>
   <data name="enterBut.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -187,7 +187,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="enterBut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 197</value>
+    <value>225, 178</value>
   </data>
   <data name="enterBut.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 30</value>
@@ -208,7 +208,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;enterBut.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>10</value>
   </data>
   <data name="disrepinfoTable.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -340,7 +340,7 @@
     <value>3</value>
   </data>
   <data name="disrepinfoTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 56</value>
+    <value>21, 92</value>
   </data>
   <data name="disrepinfoTable.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -361,7 +361,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;disrepinfoTable.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>11</value>
   </data>
   <data name="disrepinfoTable.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="startDate" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="startrangeLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="endDate" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="endRangeLabel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,48.19734,Percent,51.80266" /&gt;&lt;Rows Styles="Percent,45.45454,Percent,54.54546" /&gt;&lt;/TableLayoutSettings&gt;</value>
@@ -376,7 +376,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="allCheck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 128</value>
+    <value>24, 178</value>
   </data>
   <data name="allCheck.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 24</value>
@@ -397,7 +397,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;allCheck.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>7</value>
   </data>
   <data name="reportList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -409,13 +409,13 @@
     <value>15</value>
   </data>
   <data name="reportList.Items" xml:space="preserve">
-    <value>Date, Unit, County, age, top symtom, top cause</value>
+    <value>Date, Unit, County, age</value>
   </data>
   <data name="reportList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>766, 56</value>
+    <value>532, 19</value>
   </data>
   <data name="reportList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 289</value>
+    <value>410, 229</value>
   </data>
   <data name="reportList.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -430,7 +430,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;reportList.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="physLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -559,7 +559,7 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 291</value>
+    <value>12, 280</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -580,10 +580,169 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>5</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="physLabel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="phyCombo" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="nurseCombo" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,48.19734,Percent,51.80266" /&gt;&lt;Rows Styles="Percent,36.23188,Percent,63.76812" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="symtomText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="symtomText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="symtomText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>526, 280</value>
+  </data>
+  <data name="symtomText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>413, 26</value>
+  </data>
+  <data name="symtomText.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;symtomText.Name" xml:space="preserve">
+    <value>symtomText</value>
+  </data>
+  <data name="&gt;&gt;symtomText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;symtomText.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;symtomText.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="symtomLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="symtomLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="symtomLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 13pt</value>
+  </data>
+  <data name="symtomLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="symtomLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>682, 255</value>
+  </data>
+  <data name="symtomLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 22</value>
+  </data>
+  <data name="symtomLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="symtomLabel.Text" xml:space="preserve">
+    <value>Symtoms</value>
+  </data>
+  <data name="&gt;&gt;symtomLabel.Name" xml:space="preserve">
+    <value>symtomLabel</value>
+  </data>
+  <data name="&gt;&gt;symtomLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;symtomLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;symtomLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="causeLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="causeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="causeLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 13pt</value>
+  </data>
+  <data name="causeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="causeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>685, 318</value>
+  </data>
+  <data name="causeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 22</value>
+  </data>
+  <data name="causeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="causeLabel.Text" xml:space="preserve">
+    <value>Causes</value>
+  </data>
+  <data name="&gt;&gt;causeLabel.Name" xml:space="preserve">
+    <value>causeLabel</value>
+  </data>
+  <data name="&gt;&gt;causeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;causeLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;causeLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="causeText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="causeText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="causeText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>526, 343</value>
+  </data>
+  <data name="causeText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 26</value>
+  </data>
+  <data name="causeText.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;causeText.Name" xml:space="preserve">
+    <value>causeText</value>
+  </data>
+  <data name="&gt;&gt;causeText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;causeText.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;causeText.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="viewButt.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="viewButt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="viewButt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="viewButt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>685, 375</value>
+  </data>
+  <data name="viewButt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 30</value>
+  </data>
+  <data name="viewButt.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="viewButt.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="&gt;&gt;viewButt.Name" xml:space="preserve">
+    <value>viewButt</value>
+  </data>
+  <data name="&gt;&gt;viewButt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;viewButt.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;viewButt.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -592,7 +751,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1072, 568</value>
+    <value>986, 505</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>NurseForm</value>

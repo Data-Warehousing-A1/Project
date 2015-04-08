@@ -12,14 +12,26 @@ namespace DW_Project
 {
     public partial class NurseForm : Form
     {
+        //TODO: view dispatch report (optional?)
         public NurseForm()
         {
             InitializeComponent();
             startDate.Format = DateTimePickerFormat.Custom;
-            startDate.CustomFormat = "MM/dd/yyy HHmm";
+            startDate.CustomFormat = "MM/dd/yyy";
             endDate.Format = DateTimePickerFormat.Custom;
-            endDate.CustomFormat = "MM/dd/yyy HHmm";
+            endDate.CustomFormat = "MM/dd/yyy";
+            startDate.Value = DateTime.Today.AddDays(-7);
+            endDate.Value = DateTime.Today;
             //TODO: fill nurseCombo and phyCombo with nurse and phy numbers
+            /* result=getNurse();
+             * while(row=result.getresult()){
+             *      nurseCombo.Items.Add(row[0]+" "+row[1]);
+             *      }
+             *  result=getPhy();
+             *  while(row=result.getresult()){
+             *      phyCombo.Items.Add(row[0]+" "+row[1]);
+             *      }
+             */
         }
 
         
@@ -42,6 +54,7 @@ namespace DW_Project
             //Empty reportList
             reportList.Items.Clear();
             //TODO: Add results from sql to reportList
+            
             //reportList.Items.Add("");
         }
 
@@ -49,8 +62,9 @@ namespace DW_Project
         {
             //Grab selected
             String report = reportList.SelectedItem.ToString();
-            //TODO: Grab nurse and phys nums
-            
+            //Grab nurse and phys nums
+            String nurse = nurseCombo.SelectedItem.ToString();
+            String phys = phyCombo.SelectedItem.ToString();
             //TODO: check if numbers and correct/possible
 
             //TODO: Create/use sql insert statement/stored proc to add NurseNum and PhyNum to dispatcher_report table
@@ -64,6 +78,22 @@ namespace DW_Project
         {
             this.Visible = false;
             new StartScreenForm().ShowDialog();
+            this.Close();
+        }
+
+        private void reportList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            causeText.Text = String.Empty;
+            //TODO: populate causeText with causes stored proc
+
+            symtomText.Text = String.Empty;
+            //TODO: populate symtomText with sym stored proc
+        }
+
+        private void viewButt_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new viewForm("nur").ShowDialog();
             this.Close();
         }
 
