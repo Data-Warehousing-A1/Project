@@ -11,7 +11,7 @@ namespace DW_Project
     {
         public static SqlConnection getNewDBConnection()
         {
-            return new SqlConnection("Data Source=LYRA;Initial Catalog=cap4774sp15dwa1;User ID=cap4774sp15dwa1;Password=hovertrack");
+            return new SqlConnection("Server=lyra.unfcsd.unf.edu;Initial Catalog=cap4774sp15dwa1;User ID=cap4774sp15dwa1;Password=hovertrack");
         }
     }
 }
