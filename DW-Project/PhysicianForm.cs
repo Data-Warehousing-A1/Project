@@ -41,16 +41,15 @@ namespace DW_Project
             causeText.Text = String.Empty;
             //TODO: populate causeText with causes stored proc
 
+
             symtomText.Text = String.Empty;
             //TODO: populate symtomText with sym stored proc
         }
 
         private void viewButt_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
             //TODO: pass dispach report info to view
-            new viewForm("phy").ShowDialog();
-            this.Close();
+            new viewForm().ShowDialog();
         }
     }
 }

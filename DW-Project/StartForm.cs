@@ -17,14 +17,8 @@ namespace DW_Project
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void SwitchToNewForm(Form window)
         {
-            MessageBox.Show("Enter account name and password.");
             this.Visible = false;
             window.ShowDialog();
             this.Close();

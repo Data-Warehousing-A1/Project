@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace DW_Project
 {
@@ -34,12 +35,18 @@ namespace DW_Project
             fDialog.CheckPathExists = true;
             if (fDialog.ShowDialog() == DialogResult.OK)
             {
-                //TODO: InsetFile name into DTS file
+                //needs testing
+                //InsetFile name into DTS file
                 MessageBox.Show(fDialog.FileName.ToString());
+                String file = File.ReadAllText("../sql/Building out the Datawarehouse/02S01 load_dispatcher_report.dtsx");
+                file = file.Replace("REPLACESTRINGHERE", fDialog.FileName.ToString());
+                File.WriteAllText("../sql/Building out the Datawarehouse/02S01 load_dispatcher_report.dtsx", file);
                 //TODO: Run DTS file
 
-                //TODO: Clean DTS file
-
+                //Clean DTS file
+                file = File.ReadAllText("../sql/Building out the Datawarehouse/02S01 load_dispatcher_report.dtsx");
+                file = file.Replace(fDialog.FileName.ToString(),"REPLACESTRINGHERE");
+                File.WriteAllText("../sql/Building out the Datawarehouse/02S01 load_dispatcher_report.dtsx", file);
                 //TODO: prompt user success or fail
             }
 

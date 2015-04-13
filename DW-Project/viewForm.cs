@@ -12,11 +12,8 @@ namespace DW_Project
 {
     public partial class viewForm : Form
     {
-        String Source;
-        public viewForm(String type)
+        public viewForm()
         {
-            
-            Source = type;
             InitializeComponent();
             disDate.Format = DateTimePickerFormat.Custom;
             disDate.CustomFormat = "MM/dd/yyy HHmm";
@@ -26,12 +23,6 @@ namespace DW_Project
         private void backBut_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            if (Source.Equals("phy"))
-            {
-                new PhysicianForm().ShowDialog();
-            }
-            else
-                new NurseForm().ShowDialog();
             this.Close();
         }
     }
