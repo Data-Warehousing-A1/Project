@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace DW_Project
 {
     public partial class PhysicianForm : Form
     {
+        SqlConnection conn;
+        SqlDataReader read;
         //TODO: view dispatch report
         public PhysicianForm()
         {
             InitializeComponent();
+            //TODO: populate report list with dispatch reports assigned to this physician
         }
 
         private void backBut_Click(object sender, EventArgs e)
@@ -38,18 +42,70 @@ namespace DW_Project
 
         private void reportList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            String selected = reportList.GetItemText(reportList.SelectedItem);
+            String[] split = selected.Split(',');
+            //split[0]=date, split[1]=county, split[2]=unit, split[3]=age
+            //remove space a start of string
+            split[1] = split[1].Remove(0, 1);
+            split[2] = split[2].Remove(0, 1);
+            //converts date to necessary fomat (might not be needed)
+            DateTime hold = Convert.ToDateTime(split[0]);
+            split[0] = hold.ToString("yyyy/MM/dd HH:mm:ss.fff");
             causeText.Text = String.Empty;
-            //TODO: populate causeText with causes stored proc
+            //populate causeText with causes stored proc
+            try
+            {
+                conn = Factory.getNewDBConnection();
+                SqlCommand cmd = new SqlCommand("exec [dbo].[get_cause_list] '" + split[0] + "', '" + split[2] + "', '" + split[1] + "', " + split[3], conn);
+                conn.Open();
+                read = cmd.ExecuteReader();
+                if (read.HasRows)
+                {
+                    read.Read();
+                    causeText.Text = read[0] + "";
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("No rows found.");
+                }
+                read.Close();
 
-
-            symtomText.Text = String.Empty;
-            //TODO: populate symtomText with sym stored proc
+                symtomText.Text = String.Empty;
+                //populate symtomText with sym stored proc
+                cmd = new SqlCommand("exec [dbo].[get_symptom_list] '" + split[0] + "', '" + split[2] + "', '" + split[1] + "', " + split[3], conn);
+                read = cmd.ExecuteReader();
+                if (read.HasRows)
+                {
+                    read.Read();
+                    symtomText.Text = read[0] + "";
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("No rows found.");
+                }
+                read.Close();
+            }
+            catch (SqlException er)
+            {
+                System.Diagnostics.Debug.WriteLine("Error: " + er + "\nThere was an error connecting to the DB");
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void viewButt_Click(object sender, EventArgs e)
         {
-            //TODO: pass dispach report info to view
-            new viewForm().ShowDialog();
+            String selected = reportList.GetItemText(reportList.SelectedItem);
+            String[] split = selected.Split(',');
+            split[1] = split[1].Remove(0, 1);
+            split[2] = split[2].Remove(0, 1);
+            //converts date to necessary fomat (might not be needed)
+            DateTime hold = Convert.ToDateTime(split[0]);
+            split[0] = hold.ToString("yyyy/MM/dd HH:mm:ss.fff");
+            //pass date, unit, name, age
+            new viewForm(split[0], split[2], split[1], split[3]).ShowDialog();
         }
     }
 }

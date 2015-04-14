@@ -13,7 +13,6 @@ namespace DW_Project
 {
     public partial class NurseForm : Form
     {
-        //TODO: view dispatch report (optional?)
         SqlConnection conn;
         SqlDataReader read;
         public NurseForm()
@@ -26,53 +25,9 @@ namespace DW_Project
             startDate.Value = DateTime.Today.AddDays(-7);
             endDate.Value = DateTime.Today;
             //TODO: fill nurseCombo and phyCombo with nurse and phy numbers
-            /*try
-            {
-                conn = Factory.getNewDBConnection();
-                
-                SqlCommand cmd = new SqlCommand("getNurse", conn);
-                cmd.CommandType=CommandType.StoredProcedure;
-                conn.Open();
-                read = cmd.ExecuteReader();
-                if (read.HasRows)
-                {
-                    while (read.Read())
-                    {
-                        nurseCombo.Items.Add(read[0]+" "+read[1]);
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("No rows found.");
-                }
-                read.Close();
-                cmd = new SqlCommand("getPhy", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                read = cmd.ExecuteReader();
-                if (read.HasRows)
-                {
-                    while (read.Read())
-                    {
-                        phyCombo.Items.Add(read[0] + " " + read[1]);
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("No rows found.");
-                }
-                read.Close();
-            }
-            catch (SqlException e)
-            {
-                Console.WriteLine("Error: " + e+"\nThere was an error connecting to the DB");
-            }
-            finally
-            {
-                conn.Close();
-            }*/
         }
 
-        
+
 
         private void enterBut_Click(object sender, EventArgs e)
         {
@@ -81,53 +36,22 @@ namespace DW_Project
             String st = startDate.Value.ToString("yyyy/MM/dd");
             String ed = endDate.Value.ToString("yyyy/MM/dd");
             System.Diagnostics.Debug.WriteLine(st + " " + ed);
-            //TODO: create/use sql/stored prc to get possible dispatch reports (might want to remove already handled reports?)
-            if (!allCheck.Checked)
+            try
             {
-                //do procedure that does not check if NurseNum=NULL
-                try
+                conn = Factory.getNewDBConnection();
+                //create/use sql/stored prc to get possible dispatch reports
+                //might want to sort by oldest?
+                if (!allCheck.Checked)
                 {
-                    conn = Factory.getNewDBConnection();
-                    /*SqlCommand cmd = new SqlCommand("getDispatch", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    SqlParameter prm = new SqlParameter();
-                    prm.ParameterName = "@start_date";
-                    prm.SqlDbType = SqlDbType.DateTime;
-                    prm.Direction = ParameterDirection.Input;
-                    prm.Value = startDate.Value;
-                    cmd.Parameters.Add(prm);
-                    prm = new SqlParameter();
-                    prm.ParameterName = "@end_date";
-                    prm.SqlDbType = SqlDbType.DateTime;
-                    prm.Direction = ParameterDirection.Input;
-                    prm.Value = endDate.Value;
-                    cmd.Parameters.Add(prm);
+                    //do procedure that does check if NurseNum=NULL
+                    SqlCommand cmd = new SqlCommand("exec [dbo].[get_records] '" + st + "', '" + ed + "', 0", conn);
                     conn.Open();
                     read = cmd.ExecuteReader();
                     if (read.HasRows)
                     {
                         while (read.Read())
                         {
-                            reportList.Items.Add(read[0] + ", " + read[1]+", "+read[2]+", "+read[3]);
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("No rows found.");
-                    }
-                    read.Close();
-                    */
-                    
-                    SqlCommand cmd = new SqlCommand("exec [dbo].[hours_2_cause] '"+st+"', '"+ed+"', null", conn);
-                    conn.Open();
-                    read = cmd.ExecuteReader();
-                    if (read.HasRows)
-                    {
-                        while (read.Read())
-                        {
-                            //System.Diagnostics.Debug.WriteLine(read[0]+" "+ read[1]+" "+ read[2]);
-                            reportList.Items.Add(read[0] + " time, " + read[1] + ", " + read[2]);
-                            
+                            reportList.Items.Add(read[0] + ", " + read[1] + ", " + read[2] + ", " + read[3]);
                         }
                     }
                     else
@@ -136,18 +60,33 @@ namespace DW_Project
                     }
                     read.Close();
                 }
-                catch (SqlException er)
+                else
                 {
-                    System.Diagnostics.Debug.WriteLine("Error: " + er + "\nThere was an error connecting to the DB");
-                }
-                finally
-                {
-                    conn.Close();
+                    //do procedure that gets all
+                    SqlCommand cmd = new SqlCommand("exec [dbo].[get_records] '" + st + "', '" + ed + "', 1", conn);
+                    conn.Open();
+                    read = cmd.ExecuteReader();
+                    if (read.HasRows)
+                    {
+                        while (read.Read())
+                        {
+                            reportList.Items.Add(read[0] + ", " + read[1] + ", " + read[2] + ", " + read[3]);
+                        }
+                    }
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine("No rows found.");
+                    }
+                    read.Close();
                 }
             }
-            else
+            catch (SqlException er)
             {
-                //do procedure that gets all
+                System.Diagnostics.Debug.WriteLine("Error: " + er + "\nThere was an error connecting to the DB");
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
@@ -177,16 +116,47 @@ namespace DW_Project
         private void reportList_SelectedIndexChanged(object sender, EventArgs e)
         {
             String selected = reportList.GetItemText(reportList.SelectedItem);
-            String[] split=selected.Split(',',' ');
-            //date=split[0]+split[1] or split[2]? unit=split
-            System.Diagnostics.Debug.WriteLine("Index Changed "+selected);
+            String[] split = selected.Split(',');
+            //split[0]=date, split[1]=county, split[2]=unit, split[3]=age
+            //remove space a start of string
+            split[1] = split[1].Remove(0, 1);
+            split[2] = split[2].Remove(0, 1);
+            //converts date to necessary fomat (might not be needed)
+            DateTime hold = Convert.ToDateTime(split[0]);
+            split[0] = hold.ToString("yyyy/MM/dd HH:mm:ss.fff");
             causeText.Text = String.Empty;
-            causeText.Text = split[0] + split[1]+split[3]+split[5];
-            //TODO: populate causeText with causes stored proc
-            /*try
+            //populate causeText with causes stored proc
+            try
             {
                 conn = Factory.getNewDBConnection();
-                SqlCommand cmd = new SqlCommand("exec [dbo].[get_cause_list] '" + st + "', '" + ed + "', null", conn);
+                SqlCommand cmd = new SqlCommand("exec [dbo].[get_cause_list] '" + split[0] + "', '" + split[2] + "', '"+split[1]+"', "+split[3], conn);
+                conn.Open();
+                read = cmd.ExecuteReader();
+                if (read.HasRows)
+                {
+                    read.Read();
+                    causeText.Text = read[0]+"";
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("No rows found.");
+                }
+                read.Close();
+
+                symtomText.Text = String.Empty;
+                //populate symtomText with sym stored proc
+                cmd = new SqlCommand("exec [dbo].[get_symptom_list] '" + split[0] + "', '" + split[2] + "', '" + split[1] + "', " + split[3], conn);
+                read = cmd.ExecuteReader();
+                if (read.HasRows)
+                {
+                    read.Read();
+                    symtomText.Text = read[0] + "";
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("No rows found.");
+                }
+                read.Close();
             }
             catch (SqlException er)
             {
@@ -195,19 +165,22 @@ namespace DW_Project
             finally
             {
                 conn.Close();
-            }*/
-            symtomText.Text = String.Empty;
-            //TODO: populate symtomText with sym stored proc
+            }
         }
         //creates view form
         private void viewButt_Click(object sender, EventArgs e)
         {
             String selected = reportList.GetItemText(reportList.SelectedItem);
-            String[] split = selected.Split(',', ' ');
+            String[] split = selected.Split(',');
+            split[1] = split[1].Remove(0, 1);
+            split[2] = split[2].Remove(0, 1);
+            //converts date to necessary fomat (might not be needed)
+            DateTime hold = Convert.ToDateTime(split[0]);
+            split[0] = hold.ToString("yyyy/MM/dd HH:mm:ss.fff");
             //pass date, unit, name, age
-            new viewForm().ShowDialog();
+            new viewForm(split[0],split[2],split[1],split[3]).ShowDialog();
         }
 
-        
+
     }
 }

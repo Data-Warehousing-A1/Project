@@ -42,7 +42,6 @@
             this.countyText = new System.Windows.Forms.TextBox();
             this.countyLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
-            this.disDate = new System.Windows.Forms.DateTimePicker();
             this.pedText = new System.Windows.Forms.TextBox();
             this.sexText = new System.Windows.Forms.TextBox();
             this.catText = new System.Windows.Forms.TextBox();
@@ -52,8 +51,6 @@
             this.ccLabel = new System.Windows.Forms.Label();
             this.ccText = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.resp1Text = new System.Windows.Forms.TextBox();
-            this.respLabel = new System.Windows.Forms.Label();
             this.pulseLabel = new System.Windows.Forms.Label();
             this.oneLabel = new System.Windows.Forms.Label();
             this.twoLabel = new System.Windows.Forms.Label();
@@ -61,39 +58,42 @@
             this.pulse2Text = new System.Windows.Forms.TextBox();
             this.resp2Text = new System.Windows.Forms.TextBox();
             this.o2Label = new System.Windows.Forms.Label();
-            this.bglLabel = new System.Windows.Forms.Label();
-            this.ox2Text = new System.Windows.Forms.TextBox();
             this.ox1Text = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.blg1Text = new System.Windows.Forms.TextBox();
+            this.ox2Text = new System.Windows.Forms.TextBox();
+            this.resp1Text = new System.Windows.Forms.TextBox();
+            this.respLabel = new System.Windows.Forms.Label();
+            this.bglLabel = new System.Windows.Forms.Label();
             this.bgl2Text = new System.Windows.Forms.TextBox();
+            this.bgl1Text = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.bp2sText = new System.Windows.Forms.TextBox();
             this.bp1Label = new System.Windows.Forms.Label();
             this.sysLabel = new System.Windows.Forms.Label();
             this.diaLabel = new System.Windows.Forms.Label();
             this.bp1sText = new System.Windows.Forms.TextBox();
             this.bp1dText = new System.Windows.Forms.TextBox();
-            this.bp2Label = new System.Windows.Forms.Label();
-            this.bp2sText = new System.Windows.Forms.TextBox();
             this.bp2dText = new System.Windows.Forms.TextBox();
+            this.bp2Label = new System.Windows.Forms.Label();
             this.locCheck = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.mpsCheck = new System.Windows.Forms.CheckBox();
+            this.resusCheck = new System.Windows.Forms.CheckBox();
+            this.stemiCheck = new System.Windows.Forms.CheckBox();
+            this.saCheck = new System.Windows.Forms.CheckBox();
+            this.taCheck = new System.Windows.Forms.CheckBox();
             this.etaLabel = new System.Windows.Forms.Label();
             this.levelLabel = new System.Windows.Forms.Label();
             this.deptText = new System.Windows.Forms.TextBox();
             this.deptLabel = new System.Windows.Forms.Label();
-            this.gscText = new System.Windows.Forms.TextBox();
+            this.gcsText = new System.Windows.Forms.TextBox();
             this.gcsLabel = new System.Windows.Forms.Label();
             this.levelText = new System.Windows.Forms.TextBox();
             this.etaText = new System.Windows.Forms.TextBox();
-            this.taCheck = new System.Windows.Forms.CheckBox();
-            this.stCheck = new System.Windows.Forms.CheckBox();
-            this.stemiCheck = new System.Windows.Forms.CheckBox();
-            this.resusCheck = new System.Windows.Forms.CheckBox();
-            this.mpsCheck = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.noteLabel = new System.Windows.Forms.Label();
             this.noteText = new System.Windows.Forms.RichTextBox();
+            this.dateText = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -107,6 +107,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.1186F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.8814F));
+            this.tableLayoutPanel1.Controls.Add(this.dateText, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.descLabel, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.catLabel, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.sexLabel, 0, 6);
@@ -120,7 +121,6 @@
             this.tableLayoutPanel1.Controls.Add(this.countyText, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.countyLabel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.dateLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.disDate, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.pedText, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.sexText, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.catText, 1, 7);
@@ -137,6 +137,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(400, 453);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -288,16 +289,6 @@
             this.dateLabel.TabIndex = 7;
             this.dateLabel.Text = "Dispatch Date";
             // 
-            // disDate
-            // 
-            this.disDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.disDate.CustomFormat = "";
-            this.disDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.disDate.Location = new System.Drawing.Point(147, 12);
-            this.disDate.Name = "disDate";
-            this.disDate.Size = new System.Drawing.Size(224, 26);
-            this.disDate.TabIndex = 8;
-            // 
             // pedText
             // 
             this.pedText.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -407,7 +398,7 @@
             this.tableLayoutPanel3.Controls.Add(this.respLabel, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.bglLabel, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.bgl2Text, 2, 4);
-            this.tableLayoutPanel3.Controls.Add(this.blg1Text, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.bgl1Text, 1, 4);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(419, 248);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 5;
@@ -418,28 +409,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(400, 241);
             this.tableLayoutPanel3.TabIndex = 16;
-            // 
-            // resp1Text
-            // 
-            this.resp1Text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.resp1Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.resp1Text.Location = new System.Drawing.Point(136, 92);
-            this.resp1Text.Name = "resp1Text";
-            this.resp1Text.ReadOnly = true;
-            this.resp1Text.Size = new System.Drawing.Size(127, 26);
-            this.resp1Text.TabIndex = 20;
-            // 
-            // respLabel
-            // 
-            this.respLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.respLabel.AutoSize = true;
-            this.respLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.respLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.respLabel.Location = new System.Drawing.Point(15, 94);
-            this.respLabel.Name = "respLabel";
-            this.respLabel.Size = new System.Drawing.Size(102, 22);
-            this.respLabel.TabIndex = 18;
-            this.respLabel.Text = "Respiratory";
             // 
             // pulseLabel
             // 
@@ -519,6 +488,48 @@
             this.o2Label.TabIndex = 21;
             this.o2Label.Text = "Oxegen Sat";
             // 
+            // ox1Text
+            // 
+            this.ox1Text.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ox1Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ox1Text.Location = new System.Drawing.Point(136, 142);
+            this.ox1Text.Name = "ox1Text";
+            this.ox1Text.ReadOnly = true;
+            this.ox1Text.Size = new System.Drawing.Size(127, 26);
+            this.ox1Text.TabIndex = 24;
+            // 
+            // ox2Text
+            // 
+            this.ox2Text.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ox2Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ox2Text.Location = new System.Drawing.Point(269, 142);
+            this.ox2Text.Name = "ox2Text";
+            this.ox2Text.ReadOnly = true;
+            this.ox2Text.Size = new System.Drawing.Size(127, 26);
+            this.ox2Text.TabIndex = 23;
+            // 
+            // resp1Text
+            // 
+            this.resp1Text.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.resp1Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.resp1Text.Location = new System.Drawing.Point(136, 92);
+            this.resp1Text.Name = "resp1Text";
+            this.resp1Text.ReadOnly = true;
+            this.resp1Text.Size = new System.Drawing.Size(127, 26);
+            this.resp1Text.TabIndex = 20;
+            // 
+            // respLabel
+            // 
+            this.respLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.respLabel.AutoSize = true;
+            this.respLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.respLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.respLabel.Location = new System.Drawing.Point(15, 94);
+            this.respLabel.Name = "respLabel";
+            this.respLabel.Size = new System.Drawing.Size(102, 22);
+            this.respLabel.TabIndex = 18;
+            this.respLabel.Text = "Respiratory";
+            // 
             // bglLabel
             // 
             this.bglLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -531,25 +542,25 @@
             this.bglLabel.TabIndex = 22;
             this.bglLabel.Text = "Blood Gluc";
             // 
-            // ox2Text
+            // bgl2Text
             // 
-            this.ox2Text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ox2Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ox2Text.Location = new System.Drawing.Point(269, 142);
-            this.ox2Text.Name = "ox2Text";
-            this.ox2Text.ReadOnly = true;
-            this.ox2Text.Size = new System.Drawing.Size(127, 26);
-            this.ox2Text.TabIndex = 23;
+            this.bgl2Text.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.bgl2Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.bgl2Text.Location = new System.Drawing.Point(269, 197);
+            this.bgl2Text.Name = "bgl2Text";
+            this.bgl2Text.ReadOnly = true;
+            this.bgl2Text.Size = new System.Drawing.Size(127, 26);
+            this.bgl2Text.TabIndex = 27;
             // 
-            // ox1Text
+            // bgl1Text
             // 
-            this.ox1Text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ox1Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ox1Text.Location = new System.Drawing.Point(136, 142);
-            this.ox1Text.Name = "ox1Text";
-            this.ox1Text.ReadOnly = true;
-            this.ox1Text.Size = new System.Drawing.Size(127, 26);
-            this.ox1Text.TabIndex = 24;
+            this.bgl1Text.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.bgl1Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.bgl1Text.Location = new System.Drawing.Point(136, 197);
+            this.bgl1Text.Name = "bgl1Text";
+            this.bgl1Text.ReadOnly = true;
+            this.bgl1Text.Size = new System.Drawing.Size(127, 26);
+            this.bgl1Text.TabIndex = 26;
             // 
             // textBox3
             // 
@@ -560,26 +571,6 @@
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(127, 26);
             this.textBox3.TabIndex = 25;
-            // 
-            // blg1Text
-            // 
-            this.blg1Text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.blg1Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.blg1Text.Location = new System.Drawing.Point(136, 197);
-            this.blg1Text.Name = "blg1Text";
-            this.blg1Text.ReadOnly = true;
-            this.blg1Text.Size = new System.Drawing.Size(127, 26);
-            this.blg1Text.TabIndex = 26;
-            // 
-            // bgl2Text
-            // 
-            this.bgl2Text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.bgl2Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.bgl2Text.Location = new System.Drawing.Point(269, 197);
-            this.bgl2Text.Name = "bgl2Text";
-            this.bgl2Text.ReadOnly = true;
-            this.bgl2Text.Size = new System.Drawing.Size(127, 26);
-            this.bgl2Text.TabIndex = 27;
             // 
             // tableLayoutPanel4
             // 
@@ -603,6 +594,16 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(400, 137);
             this.tableLayoutPanel4.TabIndex = 17;
+            // 
+            // bp2sText
+            // 
+            this.bp2sText.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.bp2sText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.bp2sText.Location = new System.Drawing.Point(136, 95);
+            this.bp2sText.Name = "bp2sText";
+            this.bp2sText.ReadOnly = true;
+            this.bp2sText.Size = new System.Drawing.Size(127, 26);
+            this.bp2sText.TabIndex = 19;
             // 
             // bp1Label
             // 
@@ -660,6 +661,16 @@
             this.bp1dText.Size = new System.Drawing.Size(128, 26);
             this.bp1dText.TabIndex = 17;
             // 
+            // bp2dText
+            // 
+            this.bp2dText.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.bp2dText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.bp2dText.Location = new System.Drawing.Point(269, 95);
+            this.bp2dText.Name = "bp2dText";
+            this.bp2dText.ReadOnly = true;
+            this.bp2dText.Size = new System.Drawing.Size(127, 26);
+            this.bp2dText.TabIndex = 20;
+            // 
             // bp2Label
             // 
             this.bp2Label.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -671,26 +682,6 @@
             this.bp2Label.Size = new System.Drawing.Size(122, 22);
             this.bp2Label.TabIndex = 18;
             this.bp2Label.Text = "Blood Press 2";
-            // 
-            // bp2sText
-            // 
-            this.bp2sText.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.bp2sText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.bp2sText.Location = new System.Drawing.Point(136, 95);
-            this.bp2sText.Name = "bp2sText";
-            this.bp2sText.ReadOnly = true;
-            this.bp2sText.Size = new System.Drawing.Size(127, 26);
-            this.bp2sText.TabIndex = 19;
-            // 
-            // bp2dText
-            // 
-            this.bp2dText.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.bp2dText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.bp2dText.Location = new System.Drawing.Point(269, 95);
-            this.bp2dText.Name = "bp2dText";
-            this.bp2dText.ReadOnly = true;
-            this.bp2dText.Size = new System.Drawing.Size(127, 26);
-            this.bp2dText.TabIndex = 20;
             // 
             // locCheck
             // 
@@ -713,13 +704,13 @@
             this.tableLayoutPanel5.Controls.Add(this.mpsCheck, 1, 2);
             this.tableLayoutPanel5.Controls.Add(this.resusCheck, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.stemiCheck, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.stCheck, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.saCheck, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.taCheck, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.etaLabel, 0, 6);
             this.tableLayoutPanel5.Controls.Add(this.levelLabel, 0, 5);
             this.tableLayoutPanel5.Controls.Add(this.deptText, 1, 4);
             this.tableLayoutPanel5.Controls.Add(this.deptLabel, 0, 4);
-            this.tableLayoutPanel5.Controls.Add(this.gscText, 1, 3);
+            this.tableLayoutPanel5.Controls.Add(this.gcsText, 1, 3);
             this.tableLayoutPanel5.Controls.Add(this.gcsLabel, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.levelText, 1, 5);
             this.tableLayoutPanel5.Controls.Add(this.etaText, 1, 6);
@@ -738,6 +729,71 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(400, 354);
             this.tableLayoutPanel5.TabIndex = 19;
+            // 
+            // mpsCheck
+            // 
+            this.mpsCheck.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.mpsCheck.AutoCheck = false;
+            this.mpsCheck.AutoSize = true;
+            this.mpsCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mpsCheck.Location = new System.Drawing.Point(203, 112);
+            this.mpsCheck.Name = "mpsCheck";
+            this.mpsCheck.Size = new System.Drawing.Size(67, 26);
+            this.mpsCheck.TabIndex = 34;
+            this.mpsCheck.Text = "MPS";
+            this.mpsCheck.UseVisualStyleBackColor = true;
+            // 
+            // resusCheck
+            // 
+            this.resusCheck.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.resusCheck.AutoCheck = false;
+            this.resusCheck.AutoSize = true;
+            this.resusCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resusCheck.Location = new System.Drawing.Point(3, 112);
+            this.resusCheck.Name = "resusCheck";
+            this.resusCheck.Size = new System.Drawing.Size(128, 26);
+            this.resusCheck.TabIndex = 33;
+            this.resusCheck.Text = "Resusitation";
+            this.resusCheck.UseVisualStyleBackColor = true;
+            // 
+            // stemiCheck
+            // 
+            this.stemiCheck.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.stemiCheck.AutoCheck = false;
+            this.stemiCheck.AutoSize = true;
+            this.stemiCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stemiCheck.Location = new System.Drawing.Point(203, 62);
+            this.stemiCheck.Name = "stemiCheck";
+            this.stemiCheck.Size = new System.Drawing.Size(74, 26);
+            this.stemiCheck.TabIndex = 32;
+            this.stemiCheck.Text = "Stemi";
+            this.stemiCheck.UseVisualStyleBackColor = true;
+            // 
+            // saCheck
+            // 
+            this.saCheck.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.saCheck.AutoCheck = false;
+            this.saCheck.AutoSize = true;
+            this.saCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saCheck.Location = new System.Drawing.Point(3, 62);
+            this.saCheck.Name = "saCheck";
+            this.saCheck.Size = new System.Drawing.Size(123, 26);
+            this.saCheck.TabIndex = 31;
+            this.saCheck.Text = "Stroke Alert";
+            this.saCheck.UseVisualStyleBackColor = true;
+            // 
+            // taCheck
+            // 
+            this.taCheck.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.taCheck.AutoCheck = false;
+            this.taCheck.AutoSize = true;
+            this.taCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taCheck.Location = new System.Drawing.Point(203, 12);
+            this.taCheck.Name = "taCheck";
+            this.taCheck.Size = new System.Drawing.Size(133, 26);
+            this.taCheck.TabIndex = 30;
+            this.taCheck.Text = "Trauma Alert";
+            this.taCheck.UseVisualStyleBackColor = true;
             // 
             // etaLabel
             // 
@@ -785,15 +841,15 @@
             this.deptLabel.TabIndex = 20;
             this.deptLabel.Text = "Department";
             // 
-            // gscText
+            // gcsText
             // 
-            this.gscText.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.gscText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.gscText.Location = new System.Drawing.Point(203, 162);
-            this.gscText.Name = "gscText";
-            this.gscText.ReadOnly = true;
-            this.gscText.Size = new System.Drawing.Size(194, 26);
-            this.gscText.TabIndex = 19;
+            this.gcsText.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.gcsText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.gcsText.Location = new System.Drawing.Point(203, 162);
+            this.gcsText.Name = "gcsText";
+            this.gcsText.ReadOnly = true;
+            this.gcsText.Size = new System.Drawing.Size(194, 26);
+            this.gcsText.TabIndex = 19;
             // 
             // gcsLabel
             // 
@@ -826,71 +882,6 @@
             this.etaText.ReadOnly = true;
             this.etaText.Size = new System.Drawing.Size(194, 26);
             this.etaText.TabIndex = 25;
-            // 
-            // taCheck
-            // 
-            this.taCheck.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.taCheck.AutoCheck = false;
-            this.taCheck.AutoSize = true;
-            this.taCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taCheck.Location = new System.Drawing.Point(203, 12);
-            this.taCheck.Name = "taCheck";
-            this.taCheck.Size = new System.Drawing.Size(133, 26);
-            this.taCheck.TabIndex = 30;
-            this.taCheck.Text = "Trauma Alert";
-            this.taCheck.UseVisualStyleBackColor = true;
-            // 
-            // stCheck
-            // 
-            this.stCheck.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.stCheck.AutoCheck = false;
-            this.stCheck.AutoSize = true;
-            this.stCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stCheck.Location = new System.Drawing.Point(3, 62);
-            this.stCheck.Name = "stCheck";
-            this.stCheck.Size = new System.Drawing.Size(123, 26);
-            this.stCheck.TabIndex = 31;
-            this.stCheck.Text = "Stroke Alert";
-            this.stCheck.UseVisualStyleBackColor = true;
-            // 
-            // stemiCheck
-            // 
-            this.stemiCheck.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.stemiCheck.AutoCheck = false;
-            this.stemiCheck.AutoSize = true;
-            this.stemiCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stemiCheck.Location = new System.Drawing.Point(203, 62);
-            this.stemiCheck.Name = "stemiCheck";
-            this.stemiCheck.Size = new System.Drawing.Size(74, 26);
-            this.stemiCheck.TabIndex = 32;
-            this.stemiCheck.Text = "Stemi";
-            this.stemiCheck.UseVisualStyleBackColor = true;
-            // 
-            // resusCheck
-            // 
-            this.resusCheck.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.resusCheck.AutoCheck = false;
-            this.resusCheck.AutoSize = true;
-            this.resusCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resusCheck.Location = new System.Drawing.Point(3, 112);
-            this.resusCheck.Name = "resusCheck";
-            this.resusCheck.Size = new System.Drawing.Size(128, 26);
-            this.resusCheck.TabIndex = 33;
-            this.resusCheck.Text = "Resusitation";
-            this.resusCheck.UseVisualStyleBackColor = true;
-            // 
-            // mpsCheck
-            // 
-            this.mpsCheck.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.mpsCheck.AutoCheck = false;
-            this.mpsCheck.AutoSize = true;
-            this.mpsCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mpsCheck.Location = new System.Drawing.Point(203, 112);
-            this.mpsCheck.Name = "mpsCheck";
-            this.mpsCheck.Size = new System.Drawing.Size(67, 26);
-            this.mpsCheck.TabIndex = 34;
-            this.mpsCheck.Text = "MPS";
-            this.mpsCheck.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel6
             // 
@@ -928,6 +919,16 @@
             this.noteText.TabIndex = 11;
             this.noteText.Text = "";
             // 
+            // dateText
+            // 
+            this.dateText.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dateText.Location = new System.Drawing.Point(147, 12);
+            this.dateText.Name = "dateText";
+            this.dateText.ReadOnly = true;
+            this.dateText.Size = new System.Drawing.Size(224, 26);
+            this.dateText.TabIndex = 21;
+            // 
             // viewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -963,7 +964,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label countyLabel;
         private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.DateTimePicker disDate;
         private System.Windows.Forms.TextBox typeText;
         private System.Windows.Forms.Label ageTLabel;
         private System.Windows.Forms.TextBox ageText;
@@ -997,7 +997,7 @@
         private System.Windows.Forms.TextBox ox2Text;
         private System.Windows.Forms.Label bglLabel;
         private System.Windows.Forms.TextBox bgl2Text;
-        private System.Windows.Forms.TextBox blg1Text;
+        private System.Windows.Forms.TextBox bgl1Text;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label bp1Label;
@@ -1015,17 +1015,18 @@
         private System.Windows.Forms.Label levelLabel;
         private System.Windows.Forms.TextBox deptText;
         private System.Windows.Forms.Label deptLabel;
-        private System.Windows.Forms.TextBox gscText;
+        private System.Windows.Forms.TextBox gcsText;
         private System.Windows.Forms.Label gcsLabel;
         private System.Windows.Forms.TextBox levelText;
         private System.Windows.Forms.TextBox etaText;
         private System.Windows.Forms.CheckBox mpsCheck;
         private System.Windows.Forms.CheckBox resusCheck;
         private System.Windows.Forms.CheckBox stemiCheck;
-        private System.Windows.Forms.CheckBox stCheck;
+        private System.Windows.Forms.CheckBox saCheck;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label noteLabel;
         private System.Windows.Forms.RichTextBox noteText;
+        private System.Windows.Forms.TextBox dateText;
 
     }
 }
