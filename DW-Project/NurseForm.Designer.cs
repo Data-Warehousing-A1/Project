@@ -49,6 +49,7 @@
             this.causeLabel = new System.Windows.Forms.Label();
             this.causeText = new System.Windows.Forms.TextBox();
             this.viewButt = new System.Windows.Forms.Button();
+            this.formatLabel = new System.Windows.Forms.Label();
             this.disrepinfoTable.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -114,8 +115,6 @@
             // 
             resources.ApplyResources(this.reportList, "reportList");
             this.reportList.FormattingEnabled = true;
-            this.reportList.Items.AddRange(new object[] {
-            resources.GetString("reportList.Items")});
             this.reportList.Name = "reportList";
             this.reportList.SelectedIndexChanged += new System.EventHandler(this.reportList_SelectedIndexChanged);
             // 
@@ -178,10 +177,16 @@
             this.viewButt.UseVisualStyleBackColor = true;
             this.viewButt.Click += new System.EventHandler(this.viewButt_Click);
             // 
+            // formatLabel
+            // 
+            resources.ApplyResources(this.formatLabel, "formatLabel");
+            this.formatLabel.Name = "formatLabel";
+            // 
             // NurseForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.formatLabel);
             this.Controls.Add(this.viewButt);
             this.Controls.Add(this.causeLabel);
             this.Controls.Add(this.causeText);
@@ -226,5 +231,6 @@
         private System.Windows.Forms.Label causeLabel;
         private System.Windows.Forms.TextBox causeText;
         private System.Windows.Forms.Button viewButt;
+        private System.Windows.Forms.Label formatLabel;
     }
 }

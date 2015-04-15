@@ -20,6 +20,36 @@ namespace DW_Project
         {
             InitializeComponent();
             //TODO: populate report list with dispatch reports assigned to this physician
+            /*try
+            {
+                conn = Factory.getNewDBConnection();
+                //create/use sql/stored prc to get possible dispatch reports
+                //might want to sort by oldest?
+                //do procedure that does check if NurseNum=NULL
+                SqlCommand cmd = new SqlCommand("exec [dbo].[get_phy_records] '" + st + "', '" + ed + "', 0", conn);
+                conn.Open();
+                read = cmd.ExecuteReader();
+                if (read.HasRows)
+                {
+                    while (read.Read())
+                    {
+                        reportList.Items.Add(read[0] + ", " + read[1] + ", " + read[2] + ", " + read[3]);
+                    }
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("No rows found.");
+                }
+                read.Close();
+            }
+            catch (SqlException er)
+            {
+                System.Diagnostics.Debug.WriteLine("Error: " + er + "\nThere was an error connecting to the DB");
+            }
+            finally
+            {
+                conn.Close();
+            }*/
         }
 
         private void backBut_Click(object sender, EventArgs e)
@@ -78,6 +108,20 @@ namespace DW_Project
                 {
                     read.Read();
                     symtomText.Text = read[0] + "";
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("No rows found.");
+                }
+                read.Close();
+                //add in note
+                noteBox.Text = String.Empty;
+                cmd = new SqlCommand("exec [dbo].[get_note] '" + split[0] + "', '" + split[2] + "', '" + split[1] + "', " + split[3], conn);
+                read = cmd.ExecuteReader();
+                if (read.HasRows)
+                {
+                    read.Read();
+                    noteBox.Text = read[0] + "";
                 }
                 else
                 {

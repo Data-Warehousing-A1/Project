@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dateText = new System.Windows.Forms.TextBox();
             this.descLabel = new System.Windows.Forms.Label();
             this.catLabel = new System.Windows.Forms.Label();
             this.sexLabel = new System.Windows.Forms.Label();
@@ -93,7 +94,12 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.noteLabel = new System.Windows.Forms.Label();
             this.noteText = new System.Windows.Forms.RichTextBox();
-            this.dateText = new System.Windows.Forms.TextBox();
+            this.dispatchLabel = new System.Windows.Forms.Label();
+            this.nurseLabel = new System.Windows.Forms.Label();
+            this.disText = new System.Windows.Forms.TextBox();
+            this.nurseText = new System.Windows.Forms.TextBox();
+            this.physLabel = new System.Windows.Forms.Label();
+            this.physText = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -107,6 +113,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.1186F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.8814F));
+            this.tableLayoutPanel1.Controls.Add(this.nurseLabel, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.dateText, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.descLabel, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.catLabel, 0, 7);
@@ -125,9 +132,12 @@
             this.tableLayoutPanel1.Controls.Add(this.sexText, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.catText, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.descriptionText, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.dispatchLabel, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.disText, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.nurseText, 1, 10);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 9;
+            this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
@@ -137,9 +147,20 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(400, 453);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(400, 548);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // dateText
+            // 
+            this.dateText.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dateText.Location = new System.Drawing.Point(147, 12);
+            this.dateText.Name = "dateText";
+            this.dateText.ReadOnly = true;
+            this.dateText.Size = new System.Drawing.Size(224, 26);
+            this.dateText.TabIndex = 21;
             // 
             // descLabel
             // 
@@ -147,7 +168,7 @@
             this.descLabel.AutoSize = true;
             this.descLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.descLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.descLabel.Location = new System.Drawing.Point(22, 415);
+            this.descLabel.Location = new System.Drawing.Point(22, 414);
             this.descLabel.Name = "descLabel";
             this.descLabel.Size = new System.Drawing.Size(100, 22);
             this.descLabel.TabIndex = 28;
@@ -323,7 +344,7 @@
             // 
             this.descriptionText.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.descriptionText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.descriptionText.Location = new System.Drawing.Point(147, 413);
+            this.descriptionText.Location = new System.Drawing.Point(147, 412);
             this.descriptionText.Name = "descriptionText";
             this.descriptionText.ReadOnly = true;
             this.descriptionText.Size = new System.Drawing.Size(224, 26);
@@ -334,7 +355,7 @@
             this.backBut.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.backBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.backBut.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.backBut.Location = new System.Drawing.Point(959, 471);
+            this.backBut.Location = new System.Drawing.Point(961, 570);
             this.backBut.Name = "backBut";
             this.backBut.Size = new System.Drawing.Size(80, 30);
             this.backBut.TabIndex = 14;
@@ -888,13 +909,16 @@
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64F));
+            this.tableLayoutPanel6.Controls.Add(this.physLabel, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.noteLabel, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.noteText, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.physText, 1, 1);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(825, 365);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(400, 100);
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(400, 155);
             this.tableLayoutPanel6.TabIndex = 20;
             // 
             // noteLabel
@@ -919,21 +943,77 @@
             this.noteText.TabIndex = 11;
             this.noteText.Text = "";
             // 
-            // dateText
+            // dispatchLabel
             // 
-            this.dateText.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dateText.Location = new System.Drawing.Point(147, 12);
-            this.dateText.Name = "dateText";
-            this.dateText.ReadOnly = true;
-            this.dateText.Size = new System.Drawing.Size(224, 26);
-            this.dateText.TabIndex = 21;
+            this.dispatchLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dispatchLabel.AutoSize = true;
+            this.dispatchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.dispatchLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dispatchLabel.Location = new System.Drawing.Point(3, 464);
+            this.dispatchLabel.Name = "dispatchLabel";
+            this.dispatchLabel.Size = new System.Drawing.Size(138, 22);
+            this.dispatchLabel.TabIndex = 30;
+            this.dispatchLabel.Text = "Dispatcher Num";
+            // 
+            // nurseLabel
+            // 
+            this.nurseLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nurseLabel.AutoSize = true;
+            this.nurseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.nurseLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.nurseLabel.Location = new System.Drawing.Point(22, 514);
+            this.nurseLabel.Name = "nurseLabel";
+            this.nurseLabel.Size = new System.Drawing.Size(100, 22);
+            this.nurseLabel.TabIndex = 31;
+            this.nurseLabel.Text = "Nurse Num";
+            // 
+            // disText
+            // 
+            this.disText.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.disText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.disText.Location = new System.Drawing.Point(147, 462);
+            this.disText.Name = "disText";
+            this.disText.ReadOnly = true;
+            this.disText.Size = new System.Drawing.Size(224, 26);
+            this.disText.TabIndex = 32;
+            // 
+            // nurseText
+            // 
+            this.nurseText.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nurseText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.nurseText.Location = new System.Drawing.Point(147, 512);
+            this.nurseText.Name = "nurseText";
+            this.nurseText.ReadOnly = true;
+            this.nurseText.Size = new System.Drawing.Size(224, 26);
+            this.nurseText.TabIndex = 33;
+            // 
+            // physLabel
+            // 
+            this.physLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.physLabel.AutoSize = true;
+            this.physLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.physLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.physLabel.Location = new System.Drawing.Point(7, 116);
+            this.physLabel.Name = "physLabel";
+            this.physLabel.Size = new System.Drawing.Size(129, 22);
+            this.physLabel.TabIndex = 12;
+            this.physLabel.Text = "Physician Num";
+            // 
+            // physText
+            // 
+            this.physText.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.physText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.physText.Location = new System.Drawing.Point(147, 114);
+            this.physText.Name = "physText";
+            this.physText.ReadOnly = true;
+            this.physText.Size = new System.Drawing.Size(224, 26);
+            this.physText.TabIndex = 33;
             // 
             // viewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 501);
+            this.ClientSize = new System.Drawing.Size(1280, 612);
             this.Controls.Add(this.tableLayoutPanel6);
             this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.tableLayoutPanel4);
@@ -1027,6 +1107,12 @@
         private System.Windows.Forms.Label noteLabel;
         private System.Windows.Forms.RichTextBox noteText;
         private System.Windows.Forms.TextBox dateText;
+        private System.Windows.Forms.Label nurseLabel;
+        private System.Windows.Forms.Label dispatchLabel;
+        private System.Windows.Forms.TextBox disText;
+        private System.Windows.Forms.TextBox nurseText;
+        private System.Windows.Forms.Label physLabel;
+        private System.Windows.Forms.TextBox physText;
 
     }
 }

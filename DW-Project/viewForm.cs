@@ -74,7 +74,9 @@ namespace DW_Project
                     if((read[31]+"").Equals("0")||(read[31]+"").Equals(""))
                         mpsCheck.Checked=false;
                     else mpsCheck.Checked=true;
-                    //might read 32-34 are dispatcher_wk, physician_wk, nurse_wk might want to display them
+                    disText.Text = read[32] + "";
+                    physText.Text = read[33] + "";
+                    nurseText.Text = read[34] + "";
                     noteText.Text = read[35] + "";
                 }
                 else

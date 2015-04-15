@@ -24,7 +24,49 @@ namespace DW_Project
             endDate.CustomFormat = "MM/dd/yyy";
             startDate.Value = DateTime.Today.AddDays(-7);
             endDate.Value = DateTime.Today;
-            //TODO: fill nurseCombo and phyCombo with nurse and phy numbers
+            //fill nurseCombo and phyCombo with nurse and phy numbers
+            try
+            {
+                conn = Factory.getNewDBConnection();
+                SqlCommand cmd = new SqlCommand("exec [dbo].[get_nurse]", conn);
+                conn.Open();
+                read = cmd.ExecuteReader();
+                if (read.HasRows)
+                {
+                    while (read.Read())
+                    {
+                        nurseCombo.Items.Add(read[0] + ", " + read[1]);
+                    }
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("No rows found.");
+                }
+                read.Close();
+                cmd = new SqlCommand("exec [dbo].[get_physician]", conn);
+                read = cmd.ExecuteReader();
+                if (read.HasRows)
+                {
+                    while (read.Read())
+                    {
+                        phyCombo.Items.Add(read[0] + ", " + read[1]);
+                    }
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("No rows found.");
+                }
+                read.Close();
+
+            }
+            catch (SqlException er)
+            {
+                System.Diagnostics.Debug.WriteLine("Error: " + er + "\nThere was an error connecting to the DB");
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
 
@@ -35,7 +77,6 @@ namespace DW_Project
             //Grab times
             String st = startDate.Value.ToString("yyyy/MM/dd");
             String ed = endDate.Value.ToString("yyyy/MM/dd");
-            System.Diagnostics.Debug.WriteLine(st + " " + ed);
             try
             {
                 conn = Factory.getNewDBConnection();
@@ -92,16 +133,84 @@ namespace DW_Project
 
         private void selectBut_Click(object sender, EventArgs e)
         {
+            //TODO: react to or remove ablity to type in data that is not correct format (might need alot of error checking if so)
             //Grab selected
-            String report = reportList.SelectedItem.ToString();
+            String st = startDate.Value.ToString("yyyy/MM/dd");
+            String ed = endDate.Value.ToString("yyyy/MM/dd");
+            String selected = reportList.GetItemText(reportList.SelectedItem);
+            String[] split = selected.Split(',');
+            //split[0]=date, split[1]=county, split[2]=unit, split[3]=age
+            //remove space a start of string
+            split[1] = split[1].Remove(0, 1);
+            split[2] = split[2].Remove(0, 1);
+            //converts date to necessary fomat (might not be needed)
+            DateTime hold = Convert.ToDateTime(split[0]);
+            split[0] = hold.ToString("yyyy/MM/dd HH:mm:ss.fff");
             //Grab nurse and phys nums
-            String nurse = nurseCombo.SelectedItem.ToString();
-            String phys = phyCombo.SelectedItem.ToString();
+            String nurse = nurseCombo.SelectedItem.ToString();//TODO: Error if no nurse selected
+            String[] s= nurse.Split(',',' ');
+            nurse = s[0];
+
+            String phys = phyCombo.SelectedItem.ToString();//TODO: Error if no phys selected
+            s = phys.Split(',', ' ');
+            phys = s[0];
             //TODO: check if numbers and correct/possible
 
             //TODO: Create/use sql insert statement/stored proc to add NurseNum and PhyNum to dispatcher_report table
-
-            //TODO: remove handled from list/display success prompt (maby reselect all?)
+            try
+            {
+                conn = Factory.getNewDBConnection();
+                SqlCommand cmd = new SqlCommand("exec [dbo].[assign_np] '" + split[0] + "', '" + split[2] + "', '" + split[1] + "', " + split[3]+", "+nurse+", "+phys, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                //remove handled from list/display success prompt (maby reselect all?)
+                reportList.Items.Clear();
+                if (!allCheck.Checked)
+                {
+                    //do procedure that does check if NurseNum=NULL
+                    cmd = new SqlCommand("exec [dbo].[get_records] '" + st + "', '" + ed + "', 0", conn);
+                    read = cmd.ExecuteReader();
+                    if (read.HasRows)
+                    {
+                        while (read.Read())
+                        {
+                            reportList.Items.Add(read[0] + ", " + read[1] + ", " + read[2] + ", " + read[3]);
+                        }
+                    }
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine("No rows found.");
+                    }
+                    read.Close();
+                }
+                else
+                {
+                    //do procedure that gets all
+                    cmd = new SqlCommand("exec [dbo].[get_records] '" + st + "', '" + ed + "', 1", conn);
+                    read = cmd.ExecuteReader();
+                    if (read.HasRows)
+                    {
+                        while (read.Read())
+                        {
+                            reportList.Items.Add(read[0] + ", " + read[1] + ", " + read[2] + ", " + read[3]);
+                        }
+                    }
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine("No rows found.");
+                    }
+                    read.Close();
+                }
+            }
+            catch (SqlException er)
+            {
+                System.Diagnostics.Debug.WriteLine("Error: " + er + "\nThere was an error connecting to the DB");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
 
             //TODO: error checking
         }
