@@ -16,17 +16,17 @@ namespace DW_Project
         SqlConnection conn;
         SqlDataReader read;
         //TODO: view dispatch report
-        public PhysicianForm()
+        public PhysicianForm(String userid)
         {
             InitializeComponent();
             //TODO: populate report list with dispatch reports assigned to this physician
-            /*try
+            try
             {
                 conn = Factory.getNewDBConnection();
                 //create/use sql/stored prc to get possible dispatch reports
                 //might want to sort by oldest?
                 //do procedure that does check if NurseNum=NULL
-                SqlCommand cmd = new SqlCommand("exec [dbo].[get_phy_records] '" + st + "', '" + ed + "', 0", conn);
+                SqlCommand cmd = new SqlCommand("exec [dbo].[get_phys_records] "+userid, conn);
                 conn.Open();
                 read = cmd.ExecuteReader();
                 if (read.HasRows)
@@ -49,7 +49,7 @@ namespace DW_Project
             finally
             {
                 conn.Close();
-            }*/
+            }
         }
 
         private void backBut_Click(object sender, EventArgs e)

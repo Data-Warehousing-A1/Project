@@ -93,8 +93,6 @@
             this.reportList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.reportList.FormattingEnabled = true;
             this.reportList.ItemHeight = 15;
-            this.reportList.Items.AddRange(new object[] {
-            "Date, Unit, County, age"});
             this.reportList.Location = new System.Drawing.Point(23, 60);
             this.reportList.Name = "reportList";
             this.reportList.Size = new System.Drawing.Size(410, 229);
