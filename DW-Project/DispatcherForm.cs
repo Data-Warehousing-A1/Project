@@ -39,15 +39,23 @@ namespace DW_Project
                 //needs testing
                 //InsetFile name into DTS file
                 MessageBox.Show(fDialog.FileName.ToString());
-                String file = File.ReadAllText("../sql/Building out the Datawarehouse/02S01 load_dispatcher_report.dtsx");
-                file = file.Replace("REPLACESTRINGHERE", fDialog.FileName.ToString());
-                File.WriteAllText("../sql/Building out the Datawarehouse/02S01 load_dispatcher_report.dtsx", file);
+                String file = File.ReadAllText("../../../sql/Building out the Datawarehouse/run_file_import.bat");
+                file = file.Replace("##path##", fDialog.FileName.ToString());
+                File.WriteAllText("../../../sql/Building out the Datawarehouse/run_file_import.bat", file);
                 //TODO: Run DTS file
-
+                try
+                {
+                    System.Diagnostics.Process.Start("../../../sql/Building out the Datawarehouse/run_file_import.bat");
+                }
+                catch (Win32Exception winer)
+                {
+                    System.Diagnostics.Debug.WriteLine("Error in .bat file run");
+                    System.Diagnostics.Debug.WriteLine(winer.ErrorCode);
+                }
                 //Clean DTS file
-                file = File.ReadAllText("../sql/Building out the Datawarehouse/02S01 load_dispatcher_report.dtsx");
-                file = file.Replace(fDialog.FileName.ToString(),"REPLACESTRINGHERE");
-                File.WriteAllText("../sql/Building out the Datawarehouse/02S01 load_dispatcher_report.dtsx", file);
+                file = File.ReadAllText("../../../sql/Building out the Datawarehouse/run_file_import.bat");
+                file = file.Replace(fDialog.FileName.ToString(),"##path##");
+                File.WriteAllText("../../../sql/Building out the Datawarehouse/run_file_import.bat", file);
                 //TODO: prompt user success or fail
             }
 

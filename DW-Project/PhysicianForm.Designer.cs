@@ -38,6 +38,7 @@
             this.symtomLabel = new System.Windows.Forms.Label();
             this.symtomText = new System.Windows.Forms.TextBox();
             this.viewButt = new System.Windows.Forms.Button();
+            this.allCheck = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // backBut
@@ -95,7 +96,7 @@
             this.reportList.ItemHeight = 15;
             this.reportList.Location = new System.Drawing.Point(23, 60);
             this.reportList.Name = "reportList";
-            this.reportList.Size = new System.Drawing.Size(410, 229);
+            this.reportList.Size = new System.Drawing.Size(410, 199);
             this.reportList.TabIndex = 17;
             this.reportList.SelectedIndexChanged += new System.EventHandler(this.reportList_SelectedIndexChanged);
             // 
@@ -128,9 +129,9 @@
             this.symtomLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.symtomLabel.Location = new System.Drawing.Point(179, 298);
             this.symtomLabel.Name = "symtomLabel";
-            this.symtomLabel.Size = new System.Drawing.Size(83, 22);
+            this.symtomLabel.Size = new System.Drawing.Size(93, 22);
             this.symtomLabel.TabIndex = 19;
-            this.symtomLabel.Text = "Symtoms";
+            this.symtomLabel.Text = "Symptoms";
             // 
             // symtomText
             // 
@@ -154,11 +155,26 @@
             this.viewButt.UseVisualStyleBackColor = true;
             this.viewButt.Click += new System.EventHandler(this.viewButt_Click);
             // 
+            // allCheck
+            // 
+            this.allCheck.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.allCheck.AutoSize = true;
+            this.allCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.allCheck.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.allCheck.Location = new System.Drawing.Point(23, 265);
+            this.allCheck.Name = "allCheck";
+            this.allCheck.Size = new System.Drawing.Size(89, 24);
+            this.allCheck.TabIndex = 23;
+            this.allCheck.Text = "Show All";
+            this.allCheck.UseVisualStyleBackColor = true;
+            this.allCheck.CheckedChanged += new System.EventHandler(this.allCheck_CheckedChanged);
+            // 
             // PhysicianForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1130, 521);
+            this.Controls.Add(this.allCheck);
             this.Controls.Add(this.viewButt);
             this.Controls.Add(this.causeLabel);
             this.Controls.Add(this.causeText);
@@ -188,6 +204,7 @@
         private System.Windows.Forms.Label symtomLabel;
         private System.Windows.Forms.TextBox symtomText;
         private System.Windows.Forms.Button viewButt;
+        private System.Windows.Forms.CheckBox allCheck;
 
     }
 }
