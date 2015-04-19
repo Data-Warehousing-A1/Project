@@ -38,9 +38,10 @@ namespace DW_Project
                 //needs testing
                 //InsetFile name into DTS file
                 MessageBox.Show(fDialog.FileName.ToString());
-                String file = File.ReadAllText("../../../sql/Building out the Datawarehouse/run_file_import.bat");
+                String fullpath=Path.GetFullPath("../../../sql/Building out the Datawarehouse/run_file_import.bat");
+                String file = File.ReadAllText(fullpath);
                 file = file.Replace("##path##", fDialog.FileName.ToString());
-                File.WriteAllText("../../../sql/Building out the Datawarehouse/run_file_import.bat", file);
+                File.WriteAllText(fullpath, file);
                 //TODO: Run DTS file
                 try
                 {
@@ -48,7 +49,7 @@ namespace DW_Project
                     System.Diagnostics.ProcessStartInfo processInfo;
                     System.Diagnostics.Process process;
 
-                    processInfo = new System.Diagnostics.ProcessStartInfo("cmd.exe", "/c ../../../sql/Building out the Datawarehouse/run_file_import.bat");
+                    processInfo = new System.Diagnostics.ProcessStartInfo("cmd.exe", "/c"+fullpath);
                     processInfo.CreateNoWindow = true;
                     processInfo.UseShellExecute = false;
                     // *** Redirect the output ***
@@ -68,7 +69,7 @@ namespace DW_Project
                     Console.WriteLine("error>>" + (String.IsNullOrEmpty(error) ? "(none)" : error));
                     Console.WriteLine("ExitCode: " + exitCode.ToString(), "ExecuteCommand");
                     process.Close();
-                    System.Diagnostics.Process.Start("../../../sql/Building out the Datawarehouse/run_file_import.bat");
+                    //System.Diagnostics.Process.Start("../../../sql/Building out the Datawarehouse/run_file_import.bat");
                 }
                 catch (Win32Exception winer)
                 {
@@ -76,9 +77,9 @@ namespace DW_Project
                     System.Diagnostics.Debug.WriteLine(winer.ErrorCode);
                 }
                 //Clean DTS file
-                file = File.ReadAllText("../../../sql/Building out the Datawarehouse/run_file_import.bat");
+                file = File.ReadAllText(fullpath);
                 file = file.Replace(fDialog.FileName.ToString(), "##path##");
-                File.WriteAllText("../../../sql/Building out the Datawarehouse/run_file_import.bat", file);
+                File.WriteAllText(fullpath, file);
                 //TODO: prompt user success or fail
             }
 
