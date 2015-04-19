@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace DW_Project
 {
@@ -34,12 +35,51 @@ namespace DW_Project
             fDialog.CheckPathExists = true;
             if (fDialog.ShowDialog() == DialogResult.OK)
             {
-                //TODO: InsetFile name into DTS file
+                //needs testing
+                //InsetFile name into DTS file
                 MessageBox.Show(fDialog.FileName.ToString());
+                String fullpath=Path.GetFullPath("../../../sql/Building out the Datawarehouse/run_file_import.bat");
+                String file = File.ReadAllText(fullpath);
+                file = file.Replace("##path##", fDialog.FileName.ToString());
+                File.WriteAllText(fullpath, file);
                 //TODO: Run DTS file
+                try
+                {
+                    int exitCode;
+                    System.Diagnostics.ProcessStartInfo processInfo;
+                    System.Diagnostics.Process process;
 
-                //TODO: Clean DTS file
+                    processInfo = new System.Diagnostics.ProcessStartInfo("cmd.exe", "/c"+fullpath);
+                    processInfo.CreateNoWindow = true;
+                    processInfo.UseShellExecute = false;
+                    // *** Redirect the output ***
+                    processInfo.RedirectStandardError = true;
+                    processInfo.RedirectStandardOutput = true;
 
+                    process = System.Diagnostics.Process.Start(processInfo);
+                    process.WaitForExit();
+
+                    // *** Read the streams ***
+                    string output = process.StandardOutput.ReadToEnd();
+                    string error = process.StandardError.ReadToEnd();
+
+                    exitCode = process.ExitCode;
+
+                    Console.WriteLine("output>>" + (String.IsNullOrEmpty(output) ? "(none)" : output));
+                    Console.WriteLine("error>>" + (String.IsNullOrEmpty(error) ? "(none)" : error));
+                    Console.WriteLine("ExitCode: " + exitCode.ToString(), "ExecuteCommand");
+                    process.Close();
+                    //System.Diagnostics.Process.Start("../../../sql/Building out the Datawarehouse/run_file_import.bat");
+                }
+                catch (Win32Exception winer)
+                {
+                    System.Diagnostics.Debug.WriteLine("Error in .bat file run");
+                    System.Diagnostics.Debug.WriteLine(winer.ErrorCode);
+                }
+                //Clean DTS file
+                file = File.ReadAllText(fullpath);
+                file = file.Replace(fDialog.FileName.ToString(), "##path##");
+                File.WriteAllText(fullpath, file);
                 //TODO: prompt user success or fail
             }
 
