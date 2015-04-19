@@ -85,5 +85,11 @@ namespace DW_Project
             var theGraph = new ResultForm(SQLGridView);
             theGraph.Show();
         }
+
+        private void cheatButton_Click(object sender, EventArgs e)
+        {
+            var cheat = new CheatForm();
+            cheat.Show();
+        }
     }
 }

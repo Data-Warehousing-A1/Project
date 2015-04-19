@@ -32,6 +32,7 @@
             this.ExecuteSQLButton = new System.Windows.Forms.Button();
             this.SQLGridView = new System.Windows.Forms.DataGridView();
             this.ShowGraphButton = new System.Windows.Forms.Button();
+            this.cheatButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SQLGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,11 +81,22 @@
             this.ShowGraphButton.UseVisualStyleBackColor = true;
             this.ShowGraphButton.Click += new System.EventHandler(this.ShowGraphButton_Click);
             // 
+            // cheatButton
+            // 
+            this.cheatButton.Location = new System.Drawing.Point(252, 324);
+            this.cheatButton.Name = "cheatButton";
+            this.cheatButton.Size = new System.Drawing.Size(117, 23);
+            this.cheatButton.TabIndex = 5;
+            this.cheatButton.Text = "Cheat Sheet";
+            this.cheatButton.UseVisualStyleBackColor = true;
+            this.cheatButton.Click += new System.EventHandler(this.cheatButton_Click);
+            // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 510);
+            this.Controls.Add(this.cheatButton);
             this.Controls.Add(this.ShowGraphButton);
             this.Controls.Add(this.SQLGridView);
             this.Controls.Add(this.ExecuteSQLButton);
@@ -103,5 +115,6 @@
         private System.Windows.Forms.Button ExecuteSQLButton;
         private System.Windows.Forms.DataGridView SQLGridView;
         private System.Windows.Forms.Button ShowGraphButton;
+        private System.Windows.Forms.Button cheatButton;
     }
 }
