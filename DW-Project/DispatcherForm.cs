@@ -51,7 +51,7 @@ namespace DW_Project
                     System.Diagnostics.ProcessStartInfo processInfo;
                     System.Diagnostics.Process process;
 
-                    processInfo = new System.Diagnostics.ProcessStartInfo("cmd.exe", "/c \""+fullpath+"\"");
+                    processInfo = new System.Diagnostics.ProcessStartInfo("cmd.exe", "\""+fullpath+"\"");
                     processInfo.CreateNoWindow = true;
                     processInfo.UseShellExecute = false;
                     // *** Redirect the output ***
