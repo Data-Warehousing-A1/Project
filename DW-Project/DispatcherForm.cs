@@ -39,8 +39,10 @@ namespace DW_Project
                 //InsetFile name into DTS file
                 MessageBox.Show(fDialog.FileName.ToString());
                 String fullpath=Path.GetFullPath("../../../sql/Building out the Datawarehouse/run_file_import_var.bat");
+                String dtspath = Path.GetFullPath("../../../sql/Building out the Datawarehouse/import_with_password.dtsx");
                 String file = File.ReadAllText(fullpath);
                 file = file.Replace("##path##", fDialog.FileName.ToString());
+                file = file.Replace("##DTSPATH##", dtspath);
                 File.WriteAllText(fullpath, file);
                 //TODO: Run DTS file
                 try
@@ -49,7 +51,7 @@ namespace DW_Project
                     System.Diagnostics.ProcessStartInfo processInfo;
                     System.Diagnostics.Process process;
 
-                    processInfo = new System.Diagnostics.ProcessStartInfo("cmd.exe", "/c"+fullpath);
+                    processInfo = new System.Diagnostics.ProcessStartInfo("cmd.exe", "/c \""+fullpath+"\"");
                     processInfo.CreateNoWindow = true;
                     processInfo.UseShellExecute = false;
                     // *** Redirect the output ***
@@ -79,6 +81,7 @@ namespace DW_Project
                 //Clean DTS file
                 file = File.ReadAllText(fullpath);
                 file = file.Replace(fDialog.FileName.ToString(), "##path##");
+                file = file.Replace(dtspath, "##DTSPATH##");
                 File.WriteAllText(fullpath, file);
                 //TODO: prompt user success or fail
             }
