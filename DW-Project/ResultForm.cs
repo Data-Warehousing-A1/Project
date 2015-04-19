@@ -14,39 +14,31 @@ namespace DW_Project
 {
     public partial class ResultForm : Form
     {
-        public ResultForm(ArrayList rows, String[] colNames)
+        public ResultForm(DataGridView SQLGridView)
         {
             InitializeComponent();
-            SQLGridView.ColumnCount = colNames.Length;
-            for (int i = 0; i < colNames.Length; i++)
-            {
-                SQLGridView.Columns[i].Name = colNames[i];
-            }
-            for (int i = 0; i < rows.Count; i++)
-            {
-                SQLGridView.Rows.Add((Object[])rows[i]);
-            }
             BarChart.Series.Clear();
-            if (colNames.Length == 2)
+            if (SQLGridView.Columns.Count == 2)
             {
                 BarChart.Series.Add("Series");
-                for (int i = 0; i < rows.Count; i++)
+                BarChart.ChartAreas[0].AxisX.Interval = 1;
+                for (int i = 0; i < SQLGridView.Rows.Count; i++)
                 {
-                    BarChart.Series[0].Points.AddXY(((Object[])rows[i])[1], ((Object[])rows[i])[0]);
+                    BarChart.Series[0].Points.AddXY(SQLGridView.Rows[i].Cells[1].Value, SQLGridView.Rows[i].Cells[0].Value);
                 }
             }
-            if (colNames.Length == 3)
+            if (SQLGridView.Columns.Count == 3)
             {
-                
-                for (int i = 0; i < rows.Count; i++)
+
+                for (int i = 0; i < SQLGridView.Rows.Count; i++)
                 {
-                    if (BarChart.Series.IndexOf((String)((Object[])rows[i])[1]) == -1)
+                    if (BarChart.Series.IndexOf(SQLGridView.Rows[i].Cells[1].Value.ToString()) == -1)
                     {
-                        var s = new Series((String)((Object[])rows[i])[1]);
+                        var s = new Series(SQLGridView.Rows[i].Cells[1].Value.ToString());
                         s.ChartType = SeriesChartType.Line;
                         BarChart.Series.Add(s);
                     }
-                    BarChart.Series[(String)((Object[])rows[i])[1]].Points.AddXY(DateTime.Parse((String)((Object[])rows[i])[2]), ((Object[])rows[i])[0]);
+                    BarChart.Series[SQLGridView.Rows[i].Cells[2].Value.ToString()].Points.AddXY(SQLGridView.Rows[i].Cells[0].Value, SQLGridView.Rows[i].Cells[1].Value);
                 }
             }
         }

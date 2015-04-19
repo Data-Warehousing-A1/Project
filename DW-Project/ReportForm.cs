@@ -44,14 +44,13 @@ namespace DW_Project
                 var reader = command.ExecuteReader();
                 try
                 {
-                    var readerRows = new ArrayList();
-                    String[] colsNames = null;
+                    SQLGridView.Rows.Clear();
+                    SQLGridView.ColumnCount = reader.FieldCount;
                     if (reader.Read())
                     {
-                        colsNames = new String[reader.FieldCount];
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
-                            colsNames[i] = reader.GetName(i);
+                            SQLGridView.Columns[i].Name = reader.GetName(i);
                         }
                     }
 
@@ -59,10 +58,8 @@ namespace DW_Project
                     {
                         var arr = new Object[reader.FieldCount];
                         reader.GetValues(arr);
-                        readerRows.Add(arr);
+                        SQLGridView.Rows.Add(arr);
                     } while (reader.Read());
-                    var resultForm = new ResultForm(readerRows, colsNames);
-                    resultForm.Show();
                 }
                 catch (Exception e1)
                 {
@@ -81,6 +78,12 @@ namespace DW_Project
             {
                 connection.Close();
             }
+        }
+
+        private void ShowGraphButton_Click(object sender, EventArgs e)
+        {
+            var theGraph = new ResultForm(SQLGridView);
+            theGraph.Show();
         }
     }
 }
