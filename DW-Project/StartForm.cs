@@ -27,7 +27,7 @@ namespace DW_Project
             this.Close();
         }
 
-        private void AccountConfirmationButton_Click(object sender, EventArgs e)
+        private void SelectionCommon()
         {
             switch (AccountComboBox.SelectedIndex)
             {
@@ -35,7 +35,7 @@ namespace DW_Project
                     MessageBox.Show("Error. You need to select an account type first.");
                     break;
                 case 0:
-                    if(Login(userText.Text, passText.Text, 3))
+                    if (Login(userText.Text, passText.Text, 3))
                         SwitchToNewForm(new DispatcherForm());
                     else
                         MessageBox.Show("Bad Login");
@@ -59,6 +59,11 @@ namespace DW_Project
                         MessageBox.Show("Bad Login");
                     break;
             }
+        }
+
+        private void AccountConfirmationButton_Click(object sender, EventArgs e)
+        {
+            SelectionCommon();
         }
 
         private void HelloWorldButton_Click(object sender, EventArgs e)
@@ -95,6 +100,27 @@ namespace DW_Project
                 conn.Close();
             }
             return false;
+        }
+
+        private void PasswordLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userText_KeyDown(object sender, KeyEventArgs e)
+        {
+                if (e.KeyCode == Keys.Enter)
+            {
+                SelectionCommon();
+            }
+        }
+
+        private void passText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SelectionCommon();
+            }
         }
     }
 }
