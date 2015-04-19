@@ -38,7 +38,7 @@ namespace DW_Project
                 //needs testing
                 //InsetFile name into DTS file
                 MessageBox.Show(fDialog.FileName.ToString());
-                String fullpath=Path.GetFullPath("../../../sql/Building out the Datawarehouse/run_file_import.bat");
+                String fullpath=Path.GetFullPath("../../../sql/Building out the Datawarehouse/run_file_import_var.bat");
                 String file = File.ReadAllText(fullpath);
                 file = file.Replace("##path##", fDialog.FileName.ToString());
                 File.WriteAllText(fullpath, file);
