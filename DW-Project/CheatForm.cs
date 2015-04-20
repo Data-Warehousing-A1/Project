@@ -29,7 +29,7 @@ namespace DW_Project
                 {
                     while (read.Read())
                     {
-                        output+=(read[0]+", ");
+                        output+=(read[0]+"\n");
                     }
                 }
                 else
