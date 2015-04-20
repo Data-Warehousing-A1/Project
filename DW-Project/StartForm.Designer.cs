@@ -43,9 +43,9 @@
             this.AccountComboBox.Items.AddRange(new object[] {
             "Dispatcher",
             "Physician",
-            "Report",
+            "Admin",
             "Nurse"});
-            this.AccountComboBox.Location = new System.Drawing.Point(45, 53);
+            this.AccountComboBox.Location = new System.Drawing.Point(33, 123);
             this.AccountComboBox.Name = "AccountComboBox";
             this.AccountComboBox.Size = new System.Drawing.Size(121, 21);
             this.AccountComboBox.TabIndex = 0;
@@ -53,7 +53,7 @@
             // AccountTypeLabel
             // 
             this.AccountTypeLabel.AutoSize = true;
-            this.AccountTypeLabel.Location = new System.Drawing.Point(42, 37);
+            this.AccountTypeLabel.Location = new System.Drawing.Point(33, 107);
             this.AccountTypeLabel.Name = "AccountTypeLabel";
             this.AccountTypeLabel.Size = new System.Drawing.Size(74, 13);
             this.AccountTypeLabel.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             // AccountConfirmationButton
             // 
-            this.AccountConfirmationButton.Location = new System.Drawing.Point(45, 177);
+            this.AccountConfirmationButton.Location = new System.Drawing.Point(33, 160);
             this.AccountConfirmationButton.Name = "AccountConfirmationButton";
             this.AccountConfirmationButton.Size = new System.Drawing.Size(121, 23);
             this.AccountConfirmationButton.TabIndex = 2;
@@ -71,23 +71,25 @@
             // 
             // userText
             // 
-            this.userText.Location = new System.Drawing.Point(45, 99);
+            this.userText.Location = new System.Drawing.Point(33, 45);
             this.userText.Name = "userText";
             this.userText.Size = new System.Drawing.Size(121, 20);
             this.userText.TabIndex = 3;
+            this.userText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.userText_KeyDown);
             // 
             // passText
             // 
-            this.passText.Location = new System.Drawing.Point(45, 146);
+            this.passText.Location = new System.Drawing.Point(33, 84);
             this.passText.Name = "passText";
             this.passText.Size = new System.Drawing.Size(121, 20);
             this.passText.TabIndex = 4;
             this.passText.UseSystemPasswordChar = true;
+            this.passText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passText_KeyDown);
             // 
             // UsernameLabel
             // 
             this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Location = new System.Drawing.Point(45, 80);
+            this.UsernameLabel.Location = new System.Drawing.Point(33, 29);
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(49, 13);
             this.UsernameLabel.TabIndex = 5;
@@ -96,17 +98,18 @@
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(45, 126);
+            this.PasswordLabel.Location = new System.Drawing.Point(33, 68);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(53, 13);
             this.PasswordLabel.TabIndex = 6;
             this.PasswordLabel.Text = "Password";
+            this.PasswordLabel.Click += new System.EventHandler(this.PasswordLabel_Click);
             // 
             // StartScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(217, 247);
+            this.ClientSize = new System.Drawing.Size(178, 212);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.passText);
@@ -116,10 +119,10 @@
             this.Controls.Add(this.AccountComboBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(233, 285);
-            this.MinimumSize = new System.Drawing.Size(233, 285);
+            this.MaximumSize = new System.Drawing.Size(194, 250);
+            this.MinimumSize = new System.Drawing.Size(194, 250);
             this.Name = "StartScreenForm";
-            this.Text = "StartScreen";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

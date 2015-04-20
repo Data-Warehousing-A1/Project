@@ -61,7 +61,7 @@
             this.ClientSize = new System.Drawing.Size(702, 496);
             this.Controls.Add(this.BarChart);
             this.Name = "ResultForm";
-            this.Text = "ResultForm";
+            this.Text = "Graph";
             ((System.ComponentModel.ISupportInitialize)(this.BarChart)).EndInit();
             this.ResumeLayout(false);
 

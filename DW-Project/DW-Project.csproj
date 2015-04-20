@@ -55,6 +55,13 @@
     <Compile Include="CheatForm.Designer.cs">
       <DependentUpon>CheatForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NameQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NameQuery.Designer.cs">
+      <DependentUpon>NameQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SavedProc.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="ResultForm.cs">
       <SubType>Form</SubType>
@@ -96,6 +103,9 @@
     </Compile>
     <EmbeddedResource Include="CheatForm.resx">
       <DependentUpon>CheatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NameQuery.resx">
+      <DependentUpon>NameQuery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
