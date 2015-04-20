@@ -145,7 +145,7 @@
             this.Controls.Add(this.SQLTextBox);
             this.MinimumSize = new System.Drawing.Size(805, 370);
             this.Name = "ReportForm";
-            this.Text = "ReportForm";
+            this.Text = "Admin";
             ((System.ComponentModel.ISupportInitialize)(this.SQLGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

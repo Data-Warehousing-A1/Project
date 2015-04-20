@@ -186,7 +186,7 @@
             this.Controls.Add(this.attachBut);
             this.Controls.Add(this.backBut);
             this.Name = "PhysicianForm";
-            this.Text = "PhysicianForm";
+            this.Text = "Physician";
             this.ResumeLayout(false);
             this.PerformLayout();
 
