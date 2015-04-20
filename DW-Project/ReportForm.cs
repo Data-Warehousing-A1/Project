@@ -181,5 +181,11 @@ namespace DW_Project
                 bformatter.Serialize(stream, savedProcs);
             }
         }
+
+        private void TableNamesButton_Click(object sender, EventArgs e)
+        {
+            var cheat = new CheatForm();
+            cheat.Show();
+        }
     }
 }
