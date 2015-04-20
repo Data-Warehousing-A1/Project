@@ -122,7 +122,7 @@
             this.MaximumSize = new System.Drawing.Size(194, 250);
             this.MinimumSize = new System.Drawing.Size(194, 250);
             this.Name = "StartScreenForm";
-            this.Text = "StartScreen";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
