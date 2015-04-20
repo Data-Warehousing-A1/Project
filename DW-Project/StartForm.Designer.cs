@@ -43,7 +43,7 @@
             this.AccountComboBox.Items.AddRange(new object[] {
             "Dispatcher",
             "Physician",
-            "Report",
+            "Admin",
             "Nurse"});
             this.AccountComboBox.Location = new System.Drawing.Point(33, 123);
             this.AccountComboBox.Name = "AccountComboBox";
@@ -109,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(186, 224);
+            this.ClientSize = new System.Drawing.Size(178, 212);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.passText);
@@ -117,8 +117,10 @@
             this.Controls.Add(this.AccountConfirmationButton);
             this.Controls.Add(this.AccountTypeLabel);
             this.Controls.Add(this.AccountComboBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(500, 500);
+            this.MaximumSize = new System.Drawing.Size(194, 250);
+            this.MinimumSize = new System.Drawing.Size(194, 250);
             this.Name = "StartScreenForm";
             this.Text = "StartScreen";
             this.ResumeLayout(false);

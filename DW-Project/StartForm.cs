@@ -109,7 +109,7 @@ namespace DW_Project
 
         private void userText_KeyDown(object sender, KeyEventArgs e)
         {
-                if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 SelectionCommon();
             }
