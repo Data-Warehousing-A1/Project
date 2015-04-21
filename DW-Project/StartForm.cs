@@ -73,33 +73,40 @@ namespace DW_Project
 
         private Boolean Login(String userid, String pass, int type)
         {
-            try
+            if (userid.Length != 0 && pass.Length != 0)
             {
-                conn = Factory.getNewDBConnection();
-                SqlCommand cmd = new SqlCommand("exec [dbo].[get_login] "+userid+", "+type, conn);
-                conn.Open();
-                read = cmd.ExecuteReader();
-                if (read.HasRows)
+                try
                 {
-                    read.Read();
-                    if (pass.Equals(read[0]))
-                        return true;
+                    conn = Factory.getNewDBConnection();
+                    SqlCommand cmd = new SqlCommand("exec [dbo].[get_login] " + userid + ", " + type, conn);
+                    conn.Open();
+                    read = cmd.ExecuteReader();
+                    if (read.HasRows)
+                    {
+                        read.Read();
+                        if (pass.Equals(read[0]))
+                            return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No rows found.");
+                    }
+                    read.Close();
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("No rows found.");
+                    MessageBox.Show("Error: There was an error connecting to the DB. Make sure you are connected to the school's network");
                 }
-                read.Close();
+                finally
+                {
+                    conn.Close();
+                }
+                return false;
             }
-            catch (SqlException er)
+            else
             {
-                MessageBox.Show("Error: " + er + "\nThere was an error connecting to the DB. Make sure you are connected to the school's network");
+                return false;
             }
-            finally
-            {
-                conn.Close();
-            }
-            return false;
         }
 
         private void PasswordLabel_Click(object sender, EventArgs e)
