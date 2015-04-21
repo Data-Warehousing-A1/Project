@@ -60,7 +60,7 @@ namespace DW_Project
                 }
                 catch (Win32Exception winer)
                 {
-                    MessageBox.Show("Error in .bat file run " + winer.ErrorCode);
+                    MessageBox.Show("Error in .bat file run");
                 }
                 finally
                 {
