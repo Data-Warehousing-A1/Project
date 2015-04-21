@@ -89,7 +89,8 @@
             // 
             // QueryComboBox
             // 
-            this.QueryComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.QueryComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.QueryComboBox.FormattingEnabled = true;
             this.QueryComboBox.Location = new System.Drawing.Point(39, 381);
             this.QueryComboBox.Name = "QueryComboBox";
