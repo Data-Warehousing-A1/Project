@@ -113,7 +113,7 @@ namespace DW_Project
                 }
                 catch (SqlException er)
                 {
-                    MessageBox.Show("Error: " + er + "\nThere was an error connecting to the DB. Make sure you are connected to the school's network");
+                    MessageBox.Show("There was an error connecting to the DB. Make sure you are connected to the school's network");
                 }
                 finally
                 {
@@ -190,7 +190,7 @@ namespace DW_Project
                 }
                 catch (SqlException er)
                 {
-                    MessageBox.Show("Error: " + er + "\nThere was an error connecting to the DB. Make sure you are connected to the school's network");
+                    MessageBox.Show("There was an error connecting to the DB. Make sure you are connected to the school's network");
                 }
                 finally
                 {
