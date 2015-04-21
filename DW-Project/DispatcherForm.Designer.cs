@@ -31,6 +31,7 @@
             this.browseBut = new System.Windows.Forms.Button();
             this.browseLabel = new System.Windows.Forms.Label();
             this.backBut = new System.Windows.Forms.Button();
+            this.SDKLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // browseBut
@@ -66,11 +67,24 @@
             this.backBut.UseVisualStyleBackColor = true;
             this.backBut.Click += new System.EventHandler(this.backBut_Click);
             // 
+            // SDKLabel
+            // 
+            this.SDKLabel.AutoSize = true;
+            this.SDKLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SDKLabel.Location = new System.Drawing.Point(29, 396);
+            this.SDKLabel.Name = "SDKLabel";
+            this.SDKLabel.Size = new System.Drawing.Size(692, 22);
+            this.SDKLabel.TabIndex = 3;
+            this.SDKLabel.Text = "Please make sure you have sql server and the necessary SDK tools to run a .DTS fi" +
+    "le";
+            this.SDKLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // DispatcherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 427);
+            this.Controls.Add(this.SDKLabel);
             this.Controls.Add(this.backBut);
             this.Controls.Add(this.browseLabel);
             this.Controls.Add(this.browseBut);
@@ -87,6 +101,7 @@
         private System.Windows.Forms.Button browseBut;
         private System.Windows.Forms.Label browseLabel;
         private System.Windows.Forms.Button backBut;
+        private System.Windows.Forms.Label SDKLabel;
 
     }
 }

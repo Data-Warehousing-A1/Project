@@ -216,81 +216,6 @@
   <data name="disrepinfoTable.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;startDate.Name" xml:space="preserve">
-    <value>startDate</value>
-  </data>
-  <data name="&gt;&gt;startDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startDate.Parent" xml:space="preserve">
-    <value>disrepinfoTable</value>
-  </data>
-  <data name="&gt;&gt;startDate.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;startrangeLabel.Name" xml:space="preserve">
-    <value>startrangeLabel</value>
-  </data>
-  <data name="&gt;&gt;startrangeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startrangeLabel.Parent" xml:space="preserve">
-    <value>disrepinfoTable</value>
-  </data>
-  <data name="&gt;&gt;startrangeLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;endDate.Name" xml:space="preserve">
-    <value>endDate</value>
-  </data>
-  <data name="&gt;&gt;endDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;endDate.Parent" xml:space="preserve">
-    <value>disrepinfoTable</value>
-  </data>
-  <data name="&gt;&gt;endDate.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;endRangeLabel.Name" xml:space="preserve">
-    <value>endRangeLabel</value>
-  </data>
-  <data name="&gt;&gt;endRangeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;endRangeLabel.Parent" xml:space="preserve">
-    <value>disrepinfoTable</value>
-  </data>
-  <data name="&gt;&gt;endRangeLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="disrepinfoTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 92</value>
-  </data>
-  <data name="disrepinfoTable.RowCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="disrepinfoTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>419, 66</value>
-  </data>
-  <data name="disrepinfoTable.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;disrepinfoTable.Name" xml:space="preserve">
-    <value>disrepinfoTable</value>
-  </data>
-  <data name="&gt;&gt;disrepinfoTable.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;disrepinfoTable.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;disrepinfoTable.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="disrepinfoTable.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="startDate" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="startrangeLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="endDate" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="endRangeLabel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,48.19734,Percent,51.80266" /&gt;&lt;Rows Styles="Percent,45.45454,Percent,54.54546" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
   <data name="startDate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -413,6 +338,33 @@
   </data>
   <data name="&gt;&gt;endRangeLabel.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="disrepinfoTable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 92</value>
+  </data>
+  <data name="disrepinfoTable.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="disrepinfoTable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>419, 66</value>
+  </data>
+  <data name="disrepinfoTable.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;disrepinfoTable.Name" xml:space="preserve">
+    <value>disrepinfoTable</value>
+  </data>
+  <data name="&gt;&gt;disrepinfoTable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;disrepinfoTable.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;disrepinfoTable.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="disrepinfoTable.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="startDate" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="startrangeLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="endDate" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="endRangeLabel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,48.19734,Percent,51.80266" /&gt;&lt;Rows Styles="Percent,45.45454,Percent,54.54546" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="allCheck.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -556,7 +508,7 @@
     <value>Microsoft Sans Serif, 13pt</value>
   </data>
   <data name="phyCombo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 32</value>
+    <value>222, 31</value>
   </data>
   <data name="phyCombo.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 28</value>
@@ -583,7 +535,7 @@
     <value>Microsoft Sans Serif, 13pt</value>
   </data>
   <data name="nurseCombo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 32</value>
+    <value>3, 31</value>
   </data>
   <data name="nurseCombo.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 28</value>

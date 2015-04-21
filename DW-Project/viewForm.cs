@@ -51,7 +51,6 @@ namespace DW_Project
                     ox2Text.Text = read[19] + "";
                     bgl1Text.Text = read[20] + "";
                     bgl2Text.Text = read[21] + "";
-                    System.Diagnostics.Debug.WriteLine("BITS: "+read[22]+" "+read[24]+" "+read[25]+" "+read[26]+" "+read[28]);
                     if ((read[22] + "").Equals("0") || (read[22] + "").Equals(""))
                         locCheck.Checked=false;
                     else locCheck.Checked=true;
@@ -81,13 +80,13 @@ namespace DW_Project
                 }
                 else
                 {
-                    System.Diagnostics.Debug.WriteLine("No rows found.");
+                    MessageBox.Show("No rows found.");
                 }
                 read.Close();
             }
             catch (SqlException er)
             {
-                System.Diagnostics.Debug.WriteLine("Error: " + er + "\nThere was an error connecting to the DB");
+                MessageBox.Show("Error: " + er + "\nThere was an error connecting to the DB. Make sure you are connected to the school's network");
             }
             finally
             {

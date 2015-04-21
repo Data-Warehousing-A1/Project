@@ -37,15 +37,13 @@ namespace DW_Project
             {
                 //needs testing
                 //InsetFile name into DTS file
-                //MessageBox.Show(fDialog.FileName.ToString());
                 String fullpath=Path.GetFullPath("../../../sql/Building out the Datawarehouse/run_file_import_var.bat");
-                //MessageBox.Show(fullpath);
                 String dtspath = Path.GetFullPath("../../../sql/Building out the Datawarehouse/import_with_password.dtsx");
                 String file = File.ReadAllText(fullpath);
                 file = file.Replace("##path##", fDialog.FileName.ToString());
                 file = file.Replace("##DTSPATH##", dtspath);
                 File.WriteAllText(fullpath, file);
-                //TODO: Run DTS file
+                //Run DTS file
                 try
                 {
                     System.Diagnostics.ProcessStartInfo processInfo;
@@ -62,8 +60,7 @@ namespace DW_Project
                 }
                 catch (Win32Exception winer)
                 {
-                    System.Diagnostics.Debug.WriteLine("Error in .bat file run");
-                    System.Diagnostics.Debug.WriteLine(winer.ErrorCode);
+                    MessageBox.Show("Error in .bat file run " + winer.ErrorCode);
                 }
                 finally
                 {
