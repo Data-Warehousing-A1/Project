@@ -187,5 +187,11 @@ namespace DW_Project
             var cheat = new CheatForm();
             cheat.Show();
         }
+
+        private void cheatButton_Click(object sender, EventArgs e)
+        {
+            var cheat = new CheatForm();
+            cheat.Show();
+        }
     }
 }

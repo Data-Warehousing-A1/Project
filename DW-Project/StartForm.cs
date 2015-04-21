@@ -87,13 +87,13 @@ namespace DW_Project
                 }
                 else
                 {
-                    System.Diagnostics.Debug.WriteLine("No rows found.");
+                    MessageBox.Show("No rows found.");
                 }
                 read.Close();
             }
             catch (SqlException er)
             {
-                System.Diagnostics.Debug.WriteLine("Error: " + er + "\nThere was an error connecting to the DB");
+                MessageBox.Show("Error: " + er + "\nThere was an error connecting to the DB. Make sure you are connected to the school's network");
             }
             finally
             {
