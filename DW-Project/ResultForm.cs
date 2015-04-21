@@ -32,6 +32,7 @@ namespace DW_Project
             }
             if (SQLGridView.Columns.Count == 3)
             {
+                BarChart.ChartAreas[0].AxisX.Interval = 1;
                 BarChart.ChartAreas[0].AxisX.Title = SQLGridView.Columns[0].Name;
                 BarChart.ChartAreas[0].AxisY.Title = SQLGridView.Columns[1].Name;
                 for (int i = 0; i < SQLGridView.Rows.Count; i++)
