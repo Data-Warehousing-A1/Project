@@ -51,7 +51,7 @@
             this.ClientSize = new System.Drawing.Size(453, 262);
             this.Controls.Add(this.cheatText);
             this.Name = "CheatForm";
-            this.Text = "CheatForm";
+            this.Text = "Table Names";
             this.ResumeLayout(false);
 
         }
