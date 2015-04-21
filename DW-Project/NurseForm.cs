@@ -40,7 +40,7 @@ namespace DW_Project
                 }
                 else
                 {
-                    System.Diagnostics.Debug.WriteLine("No rows found.");
+                    MessageBox.Show("No rows found.");
                 }
                 read.Close();
                 cmd = new SqlCommand("exec [dbo].[get_physician]", conn);
@@ -54,14 +54,14 @@ namespace DW_Project
                 }
                 else
                 {
-                    System.Diagnostics.Debug.WriteLine("No rows found.");
+                    MessageBox.Show("No rows found.");
                 }
                 read.Close();
 
             }
             catch (SqlException er)
             {
-                System.Diagnostics.Debug.WriteLine("Error: " + er + "\nThere was an error connecting to the DB");
+                MessageBox.Show("Error: " + er + "\nThere was an error connecting to the DB. Make sure you are connected to the school's network");
             }
             finally
             {
@@ -97,7 +97,7 @@ namespace DW_Project
                     }
                     else
                     {
-                        System.Diagnostics.Debug.WriteLine("No rows found.");
+                        MessageBox.Show("No rows found.");
                     }
                     read.Close();
                 }
@@ -116,14 +116,14 @@ namespace DW_Project
                     }
                     else
                     {
-                        System.Diagnostics.Debug.WriteLine("No rows found.");
+                        MessageBox.Show("No rows found.");
                     }
                     read.Close();
                 }
             }
             catch (SqlException er)
             {
-                System.Diagnostics.Debug.WriteLine("Error: " + er + "\nThere was an error connecting to the DB");
+                MessageBox.Show("Error: " + er + "\nThere was an error connecting to the DB. Make sure you are connected to the school's network");
             }
             finally
             {
@@ -141,76 +141,83 @@ namespace DW_Project
             String[] split = selected.Split(',');
             //split[0]=date, split[1]=county, split[2]=unit, split[3]=age
             //remove space a start of string
-            split[1] = split[1].Remove(0, 1);
-            split[2] = split[2].Remove(0, 1);
-            //converts date to necessary fomat (might not be needed)
-            DateTime hold = Convert.ToDateTime(split[0]);
-            split[0] = hold.ToString("yyyy/MM/dd HH:mm:ss.fff");
-            //Grab nurse and phys nums
-            String nurse = nurseCombo.SelectedItem.ToString();//TODO: Error if no nurse selected
-            String[] s= nurse.Split(',',' ');
-            nurse = s[0];
-
-            String phys = phyCombo.SelectedItem.ToString();//TODO: Error if no phys selected
-            s = phys.Split(',', ' ');
-            phys = s[0];
-            //TODO: check if numbers and correct/possible
-
-            //TODO: Create/use sql insert statement/stored proc to add NurseNum and PhyNum to dispatcher_report table
             try
             {
-                conn = Factory.getNewDBConnection();
-                SqlCommand cmd = new SqlCommand("exec [dbo].[assign_np] '" + split[0] + "', '" + split[2] + "', '" + split[1] + "', " + split[3]+", "+nurse+", "+phys, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                //remove handled from list/display success prompt (maby reselect all?)
-                reportList.Items.Clear();
-                if (!allCheck.Checked)
+                split[1] = split[1].Remove(0, 1);
+                split[2] = split[2].Remove(0, 1);
+                //converts date to necessary fomat (might not be needed)
+                DateTime hold = Convert.ToDateTime(split[0]);
+                split[0] = hold.ToString("yyyy/MM/dd HH:mm:ss.fff");
+                //Grab nurse and phys nums
+                String nurse = nurseCombo.SelectedItem.ToString();//TODO: Error if no nurse selected
+                String[] s = nurse.Split(',', ' ');
+                nurse = s[0];
+
+                String phys = phyCombo.SelectedItem.ToString();//TODO: Error if no phys selected
+                s = phys.Split(',', ' ');
+                phys = s[0];
+                //TODO: check if numbers and correct/possible
+
+                //TODO: Create/use sql insert statement/stored proc to add NurseNum and PhyNum to dispatcher_report table
+                try
                 {
-                    //do procedure that does check if NurseNum=NULL
-                    cmd = new SqlCommand("exec [dbo].[get_records] '" + st + "', '" + ed + "', 0", conn);
-                    read = cmd.ExecuteReader();
-                    if (read.HasRows)
+                    conn = Factory.getNewDBConnection();
+                    SqlCommand cmd = new SqlCommand("exec [dbo].[assign_np] '" + split[0] + "', '" + split[2] + "', '" + split[1] + "', " + split[3] + ", " + nurse + ", " + phys, conn);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    //remove handled from list/display success prompt (maby reselect all?)
+                    reportList.Items.Clear();
+                    if (!allCheck.Checked)
                     {
-                        while (read.Read())
+                        //do procedure that does check if NurseNum=NULL
+                        cmd = new SqlCommand("exec [dbo].[get_records] '" + st + "', '" + ed + "', 0", conn);
+                        read = cmd.ExecuteReader();
+                        if (read.HasRows)
                         {
-                            reportList.Items.Add(read[0] + ", " + read[1] + ", " + read[2] + ", " + read[3]);
+                            while (read.Read())
+                            {
+                                reportList.Items.Add(read[0] + ", " + read[1] + ", " + read[2] + ", " + read[3]);
+                            }
                         }
+                        else
+                        {
+                            MessageBox.Show("No rows found.");
+                        }
+                        read.Close();
                     }
                     else
                     {
-                        System.Diagnostics.Debug.WriteLine("No rows found.");
-                    }
-                    read.Close();
-                }
-                else
-                {
-                    //do procedure that gets all
-                    cmd = new SqlCommand("exec [dbo].[get_records] '" + st + "', '" + ed + "', 1", conn);
-                    read = cmd.ExecuteReader();
-                    if (read.HasRows)
-                    {
-                        while (read.Read())
+                        //do procedure that gets all
+                        cmd = new SqlCommand("exec [dbo].[get_records] '" + st + "', '" + ed + "', 1", conn);
+                        read = cmd.ExecuteReader();
+                        if (read.HasRows)
                         {
-                            reportList.Items.Add(read[0] + ", " + read[1] + ", " + read[2] + ", " + read[3]);
+                            while (read.Read())
+                            {
+                                reportList.Items.Add(read[0] + ", " + read[1] + ", " + read[2] + ", " + read[3]);
+                            }
                         }
+                        else
+                        {
+                            MessageBox.Show("No rows found.");
+                        }
+                        read.Close();
                     }
-                    else
-                    {
-                        System.Diagnostics.Debug.WriteLine("No rows found.");
-                    }
-                    read.Close();
+                }
+                catch (SqlException er)
+                {
+                    MessageBox.Show("Error: " + er + "\nThere was an error connecting to the DB. Make sure you are connected to the school's network");
+                }
+                finally
+                {
+                    conn.Close();
                 }
             }
-            catch (SqlException er)
+            catch (ArgumentOutOfRangeException blah)
             {
-                System.Diagnostics.Debug.WriteLine("Error: " + er + "\nThere was an error connecting to the DB");
+                MessageBox.Show("There was an error parsing that string. Try Again");
             }
-            finally
-            {
-                conn.Close();
-            }
-            
+
 
             //TODO: error checking
         }
@@ -228,52 +235,59 @@ namespace DW_Project
             String[] split = selected.Split(',');
             //split[0]=date, split[1]=county, split[2]=unit, split[3]=age
             //remove space a start of string
-            split[1] = split[1].Remove(0, 1);
-            split[2] = split[2].Remove(0, 1);
-            //converts date to necessary fomat (might not be needed)
-            DateTime hold = Convert.ToDateTime(split[0]);
-            split[0] = hold.ToString("yyyy/MM/dd HH:mm:ss.fff");
-            causeText.Text = String.Empty;
-            //populate causeText with causes stored proc
             try
             {
-                conn = Factory.getNewDBConnection();
-                SqlCommand cmd = new SqlCommand("exec [dbo].[get_cause_list] '" + split[0] + "', '" + split[2] + "', '"+split[1]+"', "+split[3], conn);
-                conn.Open();
-                read = cmd.ExecuteReader();
-                if (read.HasRows)
+                split[1] = split[1].Remove(0, 1);
+                split[2] = split[2].Remove(0, 1);
+                //converts date to necessary fomat (might not be needed)
+                DateTime hold = Convert.ToDateTime(split[0]);
+                split[0] = hold.ToString("yyyy/MM/dd HH:mm:ss.fff");
+                causeText.Text = String.Empty;
+                //populate causeText with causes stored proc
+                try
                 {
-                    read.Read();
-                    causeText.Text = read[0]+"";
-                }
-                else
-                {
-                    System.Diagnostics.Debug.WriteLine("No rows found.");
-                }
-                read.Close();
+                    conn = Factory.getNewDBConnection();
+                    SqlCommand cmd = new SqlCommand("exec [dbo].[get_cause_list] '" + split[0] + "', '" + split[2] + "', '" + split[1] + "', " + split[3], conn);
+                    conn.Open();
+                    read = cmd.ExecuteReader();
+                    if (read.HasRows)
+                    {
+                        read.Read();
+                        causeText.Text = read[0] + "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("No rows found.");
+                    }
+                    read.Close();
 
-                symtomText.Text = String.Empty;
-                //populate symtomText with sym stored proc
-                cmd = new SqlCommand("exec [dbo].[get_symptom_list] '" + split[0] + "', '" + split[2] + "', '" + split[1] + "', " + split[3], conn);
-                read = cmd.ExecuteReader();
-                if (read.HasRows)
-                {
-                    read.Read();
-                    symtomText.Text = read[0] + "";
+                    symtomText.Text = String.Empty;
+                    //populate symtomText with sym stored proc
+                    cmd = new SqlCommand("exec [dbo].[get_symptom_list] '" + split[0] + "', '" + split[2] + "', '" + split[1] + "', " + split[3], conn);
+                    read = cmd.ExecuteReader();
+                    if (read.HasRows)
+                    {
+                        read.Read();
+                        symtomText.Text = read[0] + "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("No rows found.");
+                    }
+                    read.Close();
                 }
-                else
+                catch (SqlException er)
                 {
-                    System.Diagnostics.Debug.WriteLine("No rows found.");
+                    MessageBox.Show("Error: " + er + "\nThere was an error connecting to the DB");
                 }
-                read.Close();
+                finally
+                {
+                    conn.Close();
+                }
             }
-            catch (SqlException er)
+            catch (ArgumentOutOfRangeException blah)
             {
-                System.Diagnostics.Debug.WriteLine("Error: " + er + "\nThere was an error connecting to the DB");
-            }
-            finally
-            {
-                conn.Close();
+                MessageBox.Show("There was an error parsing that string. Try Again");
             }
         }
         //creates view form
@@ -281,13 +295,20 @@ namespace DW_Project
         {
             String selected = reportList.GetItemText(reportList.SelectedItem);
             String[] split = selected.Split(',');
-            split[1] = split[1].Remove(0, 1);
-            split[2] = split[2].Remove(0, 1);
-            //converts date to necessary fomat (might not be needed)
-            DateTime hold = Convert.ToDateTime(split[0]);
-            split[0] = hold.ToString("yyyy/MM/dd HH:mm:ss.fff");
-            //pass date, unit, name, age
-            new viewForm(split[0],split[2],split[1],split[3]).ShowDialog();
+            try
+            {
+                split[1] = split[1].Remove(0, 1);
+                split[2] = split[2].Remove(0, 1);
+                //converts date to necessary fomat (might not be needed)
+                DateTime hold = Convert.ToDateTime(split[0]);
+                split[0] = hold.ToString("yyyy/MM/dd HH:mm:ss.fff");
+                //pass date, unit, name, age
+                new viewForm(split[0], split[2], split[1], split[3]).ShowDialog();
+            }
+            catch (ArgumentOutOfRangeException blah)
+            {
+                MessageBox.Show("There was an error parsing that string. Try Again");
+            }
         }
 
 
