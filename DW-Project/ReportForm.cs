@@ -83,6 +83,10 @@ namespace DW_Project
                                 ShowGraphButton.Enabled = false;
                             }
                         }
+                        else
+                        {
+                            ShowGraphButton.Enabled = false;
+                        }
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
                             SQLGridView.Columns[i].Name = reader.GetName(i);
